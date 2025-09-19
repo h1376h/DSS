@@ -1,0 +1,118 @@
+the Series Name,Series Code,Country Name,Country Code,2015 [YR2015],2016 [YR2016],2017 [YR2017],2018 [YR2018],2019 [YR2019],2020 [YR2020],2021 [YR2021],2022 [YR2022],2023 [YR2023],2024 [YR2024]
+Current health expenditure per capita (current US$),SH.XPD.CHEX.PC.CD,"Iran, Islamic Rep.",IRN,380.40643311,444.43972778,464.12908936,284.95181274,225.23252869,201.4589386,233.74671936,237.82546997,..,..
+Current health expenditure per capita (current US$),SH.XPD.CHEX.PC.CD,Iraq,IRQ,149.07951355,199.88551331,197.23654175,232.86825562,241.73873901,248.04725647,251.59538269,254.62432861,..,..
+Current health expenditure per capita (current US$),SH.XPD.CHEX.PC.CD,Armenia,ARM,365.51950073,359.58227539,409.80145264,428.34570313,533.69952393,535.2723999,595.83544922,674.78619385,..,..
+Current health expenditure per capita (current US$),SH.XPD.CHEX.PC.CD,Kazakhstan,KAZ,310.01428223,255.84049988,272.98272705,266.92147827,263.61331177,329.57086182,391.81536865,420.97982788,..,..
+Current health expenditure per capita (current US$),SH.XPD.CHEX.PC.CD,Azerbaijan,AZE,236.25979614,169.69596863,167.01565552,180.03610229,199.25746155,245.21949768,250.9887085,304.20162964,..,..
+Current health expenditure per capita (current US$),SH.XPD.CHEX.PC.CD,Kuwait,KWT,1259.55786133,1292.71984863,1351.72387695,1658.60375977,1643.16491699,1523.4276123,1788.77563477,1700.31958008,..,..
+Current health expenditure per capita (current US$),SH.XPD.CHEX.PC.CD,Bahrain,BHR,1128.24291992,1095.92541504,1080.08898926,1041.8560791,1030.26379395,1101.79211426,1175.28198242,1110.67590332,..,..
+Current health expenditure per capita (current US$),SH.XPD.CHEX.PC.CD,Saudi Arabia,SAU,1309.27148438,1353.21813965,1400.90356445,1488.9753418,1504.55249023,1574.70068359,1654.74353027,1593.37145996,..,..
+Current health expenditure per capita (current US$),SH.XPD.CHEX.PC.CD,United Arab Emirates,ARE,1479.49743652,1592.91906738,1695.203125,1872.58422852,1962.46728516,2154.41113281,2249.96313477,2314.74511719,..,..
+Current health expenditure per capita (current US$),SH.XPD.CHEX.PC.CD,Qatar,QAT,2422.64453125,2072.06103516,1911.95361328,1966.55712891,2007.51525879,1967.15197754,1847.00231934,1781.56030273,..,..
+Current health expenditure per capita (current US$),SH.XPD.CHEX.PC.CD,Oman,OMN,767.04455566,714.48864746,704.6295166,639.78082275,730.08325195,859.24969482,856.42144775,706.92224121,..,..
+Current health expenditure per capita (current US$),SH.XPD.CHEX.PC.CD,Turkiye,TUR,444.70803833,456.3659668,432.13754272,380.27835083,388.67486572,386.2593689,431.33978271,385.87997437,..,..
+Current health expenditure per capita (current US$),SH.XPD.CHEX.PC.CD,Turkmenistan,TKM,362.72949219,376.65567017,410.81082153,411.32562256,432.78118896,420.0083313,471.86325073,579.15454102,..,..
+Current health expenditure per capita (current US$),SH.XPD.CHEX.PC.CD,Afghanistan,AFG,59.91960526,61.37234497,66.82388306,71.22509003,74.0642395,80.0892334,81.52112579,80.6516037,..,..
+Current health expenditure per capita (current US$),SH.XPD.CHEX.PC.CD,Pakistan,PAK,33.99359894,36.46934128,42.07228851,40.09578323,36.01374817,36.9091301,42.79639816,38.76602173,..,..
+Current health expenditure per capita (current US$),SH.XPD.CHEX.PC.CD,Russian Federation,RUS,496.9503479,463.29275513,577.06811523,606.11401367,650.47058105,814.94451904,881.75720215,1078.23486328,..,..
+"Physicians (per 1,000 people)",SH.MED.PHYS.ZS,"Iran, Islamic Rep.",IRN,1.106,..,1.078,1.514,..,..,..,..,..,..
+"Physicians (per 1,000 people)",SH.MED.PHYS.ZS,Iraq,IRQ,0.714,0.703,0.794,0.67,0.873,0.913,0.972,1.012,..,..
+"Physicians (per 1,000 people)",SH.MED.PHYS.ZS,Armenia,ARM,2.962,2.94,2.972,2.968,3.117,..,..,..,..,..
+"Physicians (per 1,000 people)",SH.MED.PHYS.ZS,Kazakhstan,KAZ,3.909,4.127,3.939,3.931,3.948,4.028,..,..,..,..
+"Physicians (per 1,000 people)",SH.MED.PHYS.ZS,Azerbaijan,AZE,3.291,3.227,3.164,3.2,3.111,3.093,..,..,..,..
+"Physicians (per 1,000 people)",SH.MED.PHYS.ZS,Kuwait,KWT,2.597,..,..,..,..,2.293,..,..,..,..
+"Physicians (per 1,000 people)",SH.MED.PHYS.ZS,Bahrain,BHR,0.932,0.842,..,..,..,..,..,..,..,..
+"Physicians (per 1,000 people)",SH.MED.PHYS.ZS,Saudi Arabia,SAU,2.237,2.267,2.409,2.514,2.633,2.648,2.789,3.077,..,..
+"Physicians (per 1,000 people)",SH.MED.PHYS.ZS,United Arab Emirates,ARE,2.297,2.468,2.548,2.664,2.759,2.879,2.912,..,..,..
+"Physicians (per 1,000 people)",SH.MED.PHYS.ZS,Qatar,QAT,..,2.756,..,2.499,..,..,..,..,..,..
+"Physicians (per 1,000 people)",SH.MED.PHYS.ZS,Oman,OMN,2.127,1.96,2.011,2.103,2.086,1.994,1.997,2.058,..,..
+"Physicians (per 1,000 people)",SH.MED.PHYS.ZS,Turkiye,TUR,1.774,1.788,1.827,1.849,1.926,2.036,2.165,..,..,..
+"Physicians (per 1,000 people)",SH.MED.PHYS.ZS,Turkmenistan,TKM,2.128,2.123,2.147,2.162,2.162,2.179,2.144,..,..,..
+"Physicians (per 1,000 people)",SH.MED.PHYS.ZS,Afghanistan,AFG,0.291,0.284,0.245,0.304,0.214,0.254,..,..,..,..
+"Physicians (per 1,000 people)",SH.MED.PHYS.ZS,Pakistan,PAK,0.876,0.917,0.961,0.947,1.084,..,..,..,..,..
+"Physicians (per 1,000 people)",SH.MED.PHYS.ZS,Russian Federation,RUS,3.942,3.982,4.078,4.119,4.187,3.827,..,..,..,..
+"Hospital beds (per 1,000 people)",SH.MED.BEDS.ZS,"Iran, Islamic Rep.",IRN,1.81,1.89,1.91,1.95,1.86,..,..,..,..,..
+"Hospital beds (per 1,000 people)",SH.MED.BEDS.ZS,Iraq,IRQ,1.38,1.3,1.05,1.05,1.2,1.2,1.3,..,..,..
+"Hospital beds (per 1,000 people)",SH.MED.BEDS.ZS,Armenia,ARM,4.35,4.36,4.37,4.28,4.18,4.59,..,..,..,..
+"Hospital beds (per 1,000 people)",SH.MED.BEDS.ZS,Kazakhstan,KAZ,5.75,5.54,5.43,5.31,5.13,6.72,..,..,..,..
+"Hospital beds (per 1,000 people)",SH.MED.BEDS.ZS,Azerbaijan,AZE,4.08,4.08,3.94,3.9,3.9,..,..,..,..,..
+"Hospital beds (per 1,000 people)",SH.MED.BEDS.ZS,Kuwait,KWT,2.13,2.05,2.07,2.01,2,2.35,..,..,..,..
+"Hospital beds (per 1,000 people)",SH.MED.BEDS.ZS,Bahrain,BHR,1.9,1.84,1.77,1.8,1.74,..,..,..,..,..
+"Hospital beds (per 1,000 people)",SH.MED.BEDS.ZS,Saudi Arabia,SAU,2.12,2.12,2.13,2.15,2.15,2.18,2.15,..,..,..
+"Hospital beds (per 1,000 people)",SH.MED.BEDS.ZS,United Arab Emirates,ARE,1.39,1.4,1.48,1.63,1.87,1.94,1.98,..,..,..
+"Hospital beds (per 1,000 people)",SH.MED.BEDS.ZS,Qatar,QAT,1.02,1.01,0.94,1.03,1.12,..,..,..,..,..
+"Hospital beds (per 1,000 people)",SH.MED.BEDS.ZS,Oman,OMN,1.19,1.14,1.11,1.09,1.1,1.16,..,..,..,..
+"Hospital beds (per 1,000 people)",SH.MED.BEDS.ZS,Turkiye,TUR,2.63,2.69,2.75,2.8,2.84,2.99,..,..,..,..
+"Hospital beds (per 1,000 people)",SH.MED.BEDS.ZS,Turkmenistan,TKM,4.25,4.21,4.21,4.19,4.13,4.09,4.03,..,..,..
+"Hospital beds (per 1,000 people)",SH.MED.BEDS.ZS,Afghanistan,AFG,0.44,0.45,0.42,0.4,0.38,0.34,0.36,..,..,..
+"Hospital beds (per 1,000 people)",SH.MED.BEDS.ZS,Pakistan,PAK,0.48,0.5,0.52,0.51,0.51,..,..,..,..,..
+"Hospital beds (per 1,000 people)",SH.MED.BEDS.ZS,Russian Federation,RUS,7.58,7.4,7.25,7.17,7.07,7.08,7.03,..,..,..
+"Population, total",SP.POP.TOTL,"Iran, Islamic Rep.",IRN,82619362,83812228,85026754,86117998,87051648,87723443,88455488,89524246,90608707,91567738
+"Population, total",SP.POP.TOTL,Iraq,IRQ,37560535,38469627,39337353,40265624,41192171,42116605,43071211,44070551,45074049,46042015
+"Population, total",SP.POP.TOTL,Armenia,ARM,3004600,2992300,2979400,2969000,2962500,2961500,2962300,2969200,2964300,3033500
+"Population, total",SP.POP.TOTL,Kazakhstan,KAZ,18084169,18363600,18651931,18932727,19209555,19482117,19743603,20034609,20330104,20592571
+"Population, total",SP.POP.TOTL,Azerbaijan,AZE,9649341,9757812,9854033,9939771,10024283,10093121,10137750,10141756,10153958,10202850
+"Population, total",SP.POP.TOTL,Kuwait,KWT,3834574,4004096,4154812,4323515,4442316,4400267,4360865,4589643,4853420,4973861
+"Population, total",SP.POP.TOTL,Bahrain,BHR,1370322,1423726,1501116,1503091,1483756,1472204,1504365,1524693,1577059,1588670
+"Population, total",SP.POP.TOTL,Saudi Arabia,SAU,29816382,30954198,30977355,30196281,30063799,31552510,30784383,32175224,33702731,35300280
+"Population, total",SP.POP.TOTL,United Arab Emirates,ARE,8505237,8935095,9223225,9346701,9445785,9401038,9575152,10074977,10483751,10876981
+"Population, total",SP.POP.TOTL,Qatar,QAT,2344557,2477113,2545820,2580734,2638657,2794148,2504910,2657333,2656032,2857822
+"Population, total",SP.POP.TOTL,Oman,OMN,4184895,4390877,4537396,4597877,4591241,4522497,4500424,4730226,5049269,5281538
+"Population, total",SP.POP.TOTL,Turkiye,TUR,78218479,79277962,80312698,81407204,82579440,83384680,84147318,84979913,85325965,85518661
+"Population, total",SP.POP.TOTL,Turkmenistan,TKM,6215770,6360041,6507061,6655524,6803944,6949912,7092043,7230193,7364438,7494498
+"Population, total",SP.POP.TOTL,Afghanistan,AFG,33831764,34700612,35688935,36743039,37856121,39068979,40000412,40578842,41454761,42647492
+"Population, total",SP.POP.TOTL,Pakistan,PAK,217290883,220138869,223273967,226928892,230800899,235001746,239477801,243700667,247504495,251269164
+"Population, total",SP.POP.TOTL,Russian Federation,RUS,144640716,145015460,145293260,145398106,145453291,145245148,144746762,144236933,143826130,143533851
+"Population ages 65 and above, total",SP.POP.65UP.TO,"Iran, Islamic Rep.",IRN,4962615,5239171,5527402,5818506,6107534,6341840,6550290,6829805,7172661,7544278
+"Population ages 65 and above, total",SP.POP.65UP.TO,Iraq,IRQ,1143759,1187074,1239411,1301802,1366428,1415285,1456258,1497344,1531032,1572053
+"Population ages 65 and above, total",SP.POP.65UP.TO,Armenia,ARM,328217,333488,340163,347720,356843,365546,373256,383477,391615,415674
+"Population ages 65 and above, total",SP.POP.65UP.TO,Kazakhstan,KAZ,1222755,1274386,1328707,1382423,1436948,1490147,1535387,1599847,1689059,1781923
+"Population ages 65 and above, total",SP.POP.65UP.TO,Azerbaijan,AZE,559176,580239,605051,633052,664374,694747,724513,763321,813388,872932
+"Population ages 65 and above, total",SP.POP.65UP.TO,Kuwait,KWT,92370,105646,121201,140221,160084,175826,149286,126058,143310,154430
+"Population ages 65 and above, total",SP.POP.65UP.TO,Bahrain,BHR,35474,36127,39209,41672,44579,48272,52114,53348,57373,61218
+"Population ages 65 and above, total",SP.POP.65UP.TO,Saudi Arabia,SAU,664343,685218,706357,718897,736638,795938,806106,869534,950250,1041656
+"Population ages 65 and above, total",SP.POP.65UP.TO,United Arab Emirates,ARE,127972,132706,136401,140303,144331,147041,155044,165203,177766,192192
+"Population ages 65 and above, total",SP.POP.65UP.TO,Qatar,QAT,24638,26907,28577,29531,30928,34862,32661,36966,41755,47892
+"Population ages 65 and above, total",SP.POP.65UP.TO,Oman,OMN,107757,111973,115712,118789,119866,117903,117729,125708,134333,139649
+"Population ages 65 and above, total",SP.POP.65UP.TO,Turkiye,TUR,5959022,6151693,6381992,6652511,7037942,7474490,7897192,8259640,8533473,8794894
+"Population ages 65 and above, total",SP.POP.65UP.TO,Turkmenistan,TKM,221630,228382,236030,244388,253702,263938,275641,292438,314637,339519
+"Population ages 65 and above, total",SP.POP.65UP.TO,Afghanistan,AFG,797312,817372,842165,869752,899520,926221,941030,955689,985603,1023954
+"Population ages 65 and above, total",SP.POP.65UP.TO,Pakistan,PAK,8302510,8476268,8682824,8924694,9196204,9453316,9704057,10020184,10385960,10755901
+"Population ages 65 and above, total",SP.POP.65UP.TO,Russian Federation,RUS,19576347,20115856,20691110,21272107,21910065,22472536,22773585,23186861,23881815,24655492
+"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,"Iran, Islamic Rep.",IRN,75.907,76.155,76.396,76.621,76.855,74.141,73.752,76.799,77.654,..
+"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,Iraq,IRQ,69.977,68.683,69.788,71.116,71.245,69.651,70.704,72.037,72.324,..
+"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,Armenia,ARM,74.8707317073171,74.8682926829268,75.2170731707317,75.619512195122,76.2219512195122,73.3756097560976,72.2780487804878,74.7658536585366,77.4658536585366,..
+"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,Kazakhstan,KAZ,72.024,72.549,72.996,73.369,73.658,71.195,70.131,73.503,74.402,..
+"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,Azerbaijan,AZE,72.349,72.568,72.694,73.016,73.29,70.312,70.999,74.125,74.429,..
+"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,Kuwait,KWT,79.3765609756098,79.6775853658537,79.9160731707317,80.1063658536585,81.969756097561,78.7609756097561,78.7365853658537,80.5878048780488,83.1878048780488,..
+"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,Bahrain,BHR,80.338,80.407,80.407,80.412,80.471,78.683,78.083,80.992,81.284,..
+"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,Saudi Arabia,SAU,77.776,78.354,78.721,78.75,78.313,77.596,77.089,77.31,78.732,..
+"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,United Arab Emirates,ARE,82.076,82.195,82.388,82.449,82.596,81.936,79.083,80.487,82.909,..
+"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,Qatar,QAT,81.785,82.147,82.458,82.714,82.945,80.409,81.083,81.857,82.368,..
+"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,Oman,OMN,79.346,79.581,79.748,79.864,79.946,77.763,75.969,77.911,80.031,..
+"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,Turkiye,TUR,76.539,76.595,77.037,77.454,77.737,76.525,75.722,77.591,77.156,..
+"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,Turkmenistan,TKM,69.061,69.142,69.19,69.272,69.405,68.846,69.353,69.913,70.073,..
+"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,Afghanistan,AFG,62.27,62.646,62.406,62.443,62.941,61.454,60.417,65.617,66.035,..
+"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,Pakistan,PAK,65.641,65.943,66.223,66.481,66.729,65.701,65.773,67.417,67.649,..
+"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,Russian Federation,RUS,71.1834146341463,71.6512195121951,72.4514634146342,72.6621951219512,73.0839024390244,71.3387804878049,69.900243902439,72.5456097560976,73.2546341463415,..
+"Mortality rate, infant (per 1,000 live births)",SP.DYN.IMRT.IN,"Iran, Islamic Rep.",IRN,13.9,13.5,13,12.5,12.1,11.7,11.4,11,10.7,..
+"Mortality rate, infant (per 1,000 live births)",SP.DYN.IMRT.IN,Iraq,IRQ,26.7,25.9,25.1,24.4,23.6,22.9,22.2,21.5,20.8,..
+"Mortality rate, infant (per 1,000 live births)",SP.DYN.IMRT.IN,Armenia,ARM,12.8,12.2,11.7,11.2,10.7,10.2,9.7,9.3,8.9,..
+"Mortality rate, infant (per 1,000 live births)",SP.DYN.IMRT.IN,Kazakhstan,KAZ,9.5,8.8,8.4,8.2,8.1,8,7.9,7.7,7.6,..
+"Mortality rate, infant (per 1,000 live births)",SP.DYN.IMRT.IN,Azerbaijan,AZE,21.1,19.8,18.7,17.6,16.6,15.6,14.8,14.1,13.3,..
+"Mortality rate, infant (per 1,000 live births)",SP.DYN.IMRT.IN,Kuwait,KWT,7.8,7.7,7.6,7.6,7.6,7.7,7.6,7.6,7.6,..
+"Mortality rate, infant (per 1,000 live births)",SP.DYN.IMRT.IN,Bahrain,BHR,6.3,6.3,6.3,6.4,6.5,6.6,6.8,7,7.2,..
+"Mortality rate, infant (per 1,000 live births)",SP.DYN.IMRT.IN,Saudi Arabia,SAU,7.4,6.9,6.5,6.1,5.8,5.5,5.3,5.1,4.9,..
+"Mortality rate, infant (per 1,000 live births)",SP.DYN.IMRT.IN,United Arab Emirates,ARE,6.1,5.8,5.6,5.3,5,4.7,4.4,4.2,4,..
+"Mortality rate, infant (per 1,000 live births)",SP.DYN.IMRT.IN,Qatar,QAT,6.4,6.2,5.9,5.6,5.4,5.2,5.1,5,4.9,..
+"Mortality rate, infant (per 1,000 live births)",SP.DYN.IMRT.IN,Oman,OMN,9.1,9,8.9,8.8,8.7,8.6,8.6,8.5,8.4,..
+"Mortality rate, infant (per 1,000 live births)",SP.DYN.IMRT.IN,Turkiye,TUR,11,10.4,9.9,9.5,9.1,8.7,8.4,8,9.1,..
+"Mortality rate, infant (per 1,000 live births)",SP.DYN.IMRT.IN,Turkmenistan,TKM,33.8,34,34.2,34.1,33.8,33.2,32.6,32,31.2,..
+"Mortality rate, infant (per 1,000 live births)",SP.DYN.IMRT.IN,Afghanistan,AFG,64.2,62.3,60.4,58.6,56.9,55.3,53.6,52,50.4,..
+"Mortality rate, infant (per 1,000 live births)",SP.DYN.IMRT.IN,Pakistan,PAK,64.1,62.2,60.3,58.5,56.8,55.1,53.4,51.8,50.1,..
+"Mortality rate, infant (per 1,000 live births)",SP.DYN.IMRT.IN,Russian Federation,RUS,6.6,6.1,5.6,5.1,4.7,4.4,4.1,3.9,3.7,..
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+Data from database: Health Nutrition and Population Statistics,,,,,,,,,,,,,
+Last Updated: 07/02/2025,,,,,,,,,,,,,
