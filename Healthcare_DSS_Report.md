@@ -75,7 +75,7 @@
 
 **ویژگی‌های کلیدی سیستم**:
 - پشتیبانی از ۱۲ مجموعه‌داده مختلف بهداشتی (۶ واقعی، ۶ مصنوعی)
-- پیاده‌سازی ۸ الگوریتم یادگیری ماشین شامل جنگل تصادفی[^12]، تقویت گرادیان شدید[^13]، تقویت گرادیان سبک[^14]، ماشین بردار پشتیبان[^15]، رگرسیون لجستیک[^16]، رگرسیون خطی[^17]، درخت تصمیم[^18] و بیز ساده[^19]
+- پیاده‌سازی ۸ الگوریتم یادگیری ماشین شامل جنگل تصادفی[^8]، تقویت گرادیان شدید[^9]، تقویت گرادیان سبک[^10]، ماشین بردار پشتیبان[^11]، رگرسیون لجستیک[^16]، رگرسیون خطی[^17]، درخت تصمیم[^18] و بیز ساده[^19]
 - ۵ داشبورد تخصصی برای نقش‌های مختلف شامل کادر بالینی[^20]، مدیریت اجرایی[^21]، رهبری بحرانی[^22]، مدیر بخش[^23] و مدیر مالی[^24]
 - سیستم ارزیابی جامع با ۱۵۹ تست (نرخ موفقیت ۸۹.۹۴٪)
 - معماری مدولار شامل ۴ زیرسیستم اصلی
@@ -94,10 +94,6 @@
 [^9]: XGBoost (Extreme Gradient Boosting)
 [^10]: LightGBM (Light Gradient Boosting Machine)
 [^11]: Support Vector Machine (SVM)
-[^12]: Random Forest
-[^13]: XGBoost (Extreme Gradient Boosting)
-[^14]: LightGBM (Light Gradient Boosting Machine)
-[^15]: Support Vector Machine (SVM)
 [^16]: Logistic Regression
 [^17]: Linear Regression
 [^18]: Decision Tree
@@ -1278,7 +1274,7 @@ healthcare_dss/
 
 ## ۵. منابع و مراجع
 
-1. **توربان، ای.، شاردا، آر.، و دلن، د.** (۲۰۲۰). تحلیل‌ها، علم داده و هوش مصنوعی: سیستم‌های پشتیبانی تصمیم‌گیری (ویرایش یازدهم). پیرسون[^268].
+1. **توربان، ای.، شاردا، آر.، و دلن، د.** (۲۰۲۰). تحلیل‌ها، علم داده و هوش مصنوعی: سیستم‌های پشتیبانی تصمیم‌گیری (ویرایش یازدهم). پیرسون[^2].
    - **منبع اصلی**: https://www.amazon.com/Analytics-Data-Science-Artificial-Intelligence/dp/0135192013
    - **فصل‌های مرتبط**: معماری سیستم‌های پشتیبانی تصمیم‌گیری، مدل چهار مرحله‌ای هربرت سایمون، ماتریس انتخاب فناوری هوش مصنوعی
 
@@ -1319,7 +1315,6 @@ healthcare_dss/
 
 ### پانویس‌های بخش منابع و مراجع
 
-[^268]: Turban, E., Sharda, R., & Delen, D. (2020). Analytics, Data Science, & Artificial Intelligence: Systems for Decision Support (11th Edition). Pearson
 [^269]: Herbert A. Simon (1960). The New Science of Management Decision. Harper & Row
 [^270]: CRISP-DM (Cross-Industry Standard Process for Data Mining)
 [^271]: HL7 FHIR Specification (2023). Fast Healthcare Interoperability Resources
