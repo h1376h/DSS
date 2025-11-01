@@ -533,33 +533,33 @@ class ModelManager:
 ### الگوریتم‌های پیاده‌سازی شده
 
 **الگوریتم‌های طبقه‌بندی**:
-- **طبقه‌بند جنگل تصادفی**[^144]: برای طبقه‌بندی دوکلاسه و چندکلاسه[^145]
-- **رگرسیون لجستیک**[^146]: برای طبقه‌بندی خطی[^147]
-- **درخت تصمیم**[^148]: برای طبقه‌بندی قابل تفسیر[^149]
+- **طبقه‌بند جنگل تصادفی**[^11]: برای طبقه‌بندی دوکلاسه و چندکلاسه[^145]
+- **رگرسیون لجستیک**[^16]: برای طبقه‌بندی خطی[^147]
+- **درخت تصمیم**[^18]: برای طبقه‌بندی قابل تفسیر[^149]
 - **طبقه‌بند ایکس‌جی‌بوست**[^150]: برای عملکرد بالا[^151]
-- **ماشین بردار پشتیبان**[^152]: برای طبقه‌بندی با هسته‌های مختلف[^153]
+- **ماشین بردار پشتیبان**[^14]: برای طبقه‌بندی با هسته‌های مختلف[^153]
 
 **الگوریتم‌های رگرسیون**:
-- **رگرسور جنگل تصادفی**[^154]: برای پیش‌بینی مقادیر پیوسته[^155]
-- **رگرسیون خطی**[^156]: برای رگرسیون خطی[^157]
+- **رگرسور جنگل تصادفی**[^11]: برای پیش‌بینی مقادیر پیوسته[^155]
+- **رگرسیون خطی**[^17]: برای رگرسیون خطی[^157]
 - **رگرسور ایکس‌جی‌بوست**[^158]: برای رگرسیون با دقت بالا[^159]
 - **رگرسیون بردار پشتیبان**[^160]: برای رگرسیون با ماشین بردار پشتیبان[^161]
 
 ### پانویس‌های بخش پیاده‌سازی مدل
 
-[^144]: Random Forest Classifier
+
 [^145]: Binary and Multi-class Classification
-[^146]: Logistic Regression
+
 [^147]: Linear Classification
-[^148]: Decision Tree
+
 [^149]: Interpretable Classification
 [^150]: XGBoost Classifier
 [^151]: High Performance
-[^152]: Support Vector Machine
+
 [^153]: Different Kernel Classification
-[^154]: Random Forest Regressor
+
 [^155]: Continuous Value Prediction
-[^156]: Linear Regression
+
 [^157]: Linear Regression Method
 [^158]: XGBoost Regressor
 [^159]: High Accuracy Regression
@@ -1302,7 +1302,7 @@ healthcare_dss/
 ### پانویس‌های بخش منابع و مراجع
 
 [^269]: Herbert A. Simon (1960). The New Science of Management Decision. Harper & Row
-[^270]: Cross-Industry Standard Process for Data Mining (CRISP-DM)
+
 [^271]: HL7 FHIR Specification (2023). Fast Healthcare Interoperability Resources
 [^272]: DICOM Standard
 [^273]: SNOMED CT
