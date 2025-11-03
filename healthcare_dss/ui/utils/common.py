@@ -6,12 +6,36 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import os
-from typing import Dict, Any, Optional, List
+from typing import Dict, Any, Optional, List, Union
 
 
 def check_system_initialization() -> bool:
-    """Check if the DSS system is properly initialized"""
-    return st.session_state.get('initialized', False) and st.session_state.data_manager is not None
+    """
+    Check if the DSS system is properly initialized
+    
+    Returns:
+        bool: True if system is properly initialized, False otherwise
+    """
+    try:
+        # Check if streamlit session state exists and has required components
+        if not hasattr(st, 'session_state'):
+            return False
+            
+        # Check for basic initialization flag
+        if not st.session_state.get('initialized', False):
+            return False
+            
+        # Check for required managers
+        required_managers = ['data_manager', 'model_manager', 'knowledge_manager']
+        for manager in required_managers:
+            if st.session_state.get(manager) is None:
+                return False
+                
+        return True
+        
+    except Exception:
+        # If any error occurs during check, consider system not initialized
+        return False
 
 
 def display_dataset_info(dataset: pd.DataFrame, dataset_name: str) -> None:
@@ -118,12 +142,41 @@ def display_warning_message(message: str) -> None:
     """Display standardized warning messages"""
     st.warning(f"⚠️ {message}")
 
-def create_metric_columns(metrics: Dict[str, Any], columns: int = 3) -> None:
-    """Display metrics in columns"""
+def create_metric_columns(metrics: Union[Dict[str, Any], List[Dict[str, Any]]], columns: int = 3) -> None:
+    """
+    Display metrics in columns
+    
+    Args:
+        metrics: Either a dictionary of key-value pairs or a list of dictionaries with 'label' and 'value' keys
+        columns: Number of columns to display
+    """
+    import streamlit as st
+    from typing import Union, Dict, List, Any
+    
     cols = st.columns(columns)
-    for i, (key, value) in enumerate(metrics.items()):
-        with cols[i % columns]:
-            st.metric(key, value)
+    
+    # Handle different input types
+    if isinstance(metrics, dict):
+        # Original behavior for dictionary input
+        for i, (key, value) in enumerate(metrics.items()):
+            with cols[i % columns]:
+                st.metric(key, value)
+    elif isinstance(metrics, list):
+        # New behavior for list input
+        for i, metric in enumerate(metrics):
+            with cols[i % columns]:
+                if isinstance(metric, dict):
+                    # Handle dictionary with 'label' and 'value' keys
+                    label = metric.get('label', metric.get('name', f'Metric {i+1}'))
+                    value = metric.get('value', metric.get('val', 'N/A'))
+                    delta = metric.get('delta', None)
+                    st.metric(label, value, delta=delta)
+                else:
+                    # Handle simple values
+                    st.metric(f'Metric {i+1}', metric)
+    else:
+        # Fallback for unsupported types
+        st.error(f"Unsupported metrics type: {type(metrics)}. Expected Dict or List.")
 
 
 def safe_dataframe_display(df: pd.DataFrame, max_rows: int = 10, width: str = None, 

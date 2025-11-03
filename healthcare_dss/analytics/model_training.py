@@ -645,3 +645,175 @@ class ModelTrainingEngine:
                     })
 
         return pd.DataFrame(results)
+
+    def optimize_hyperparameters(self, model_name: str, X_train: pd.DataFrame, y_train: pd.Series, 
+                                task_type: str, n_trials: int = 50) -> Dict[str, Any]:
+        """
+        Optimize hyperparameters using Optuna for advanced optimization
+        
+        Args:
+            model_name: Name of the model to optimize
+            X_train: Training features
+            y_train: Training target
+            task_type: Type of task ('classification' or 'regression')
+            n_trials: Number of optimization trials
+            
+        Returns:
+            Dictionary containing optimization results
+        """
+        try:
+            logger.info(f"Starting hyperparameter optimization for {model_name} with {n_trials} trials")
+            
+            # Check if model is supported
+            if model_name not in self.model_configs or task_type not in self.model_configs[model_name]:
+                raise ValueError(f"Model {model_name} not supported for {task_type}")
+            
+            model_config = self.model_configs[model_name][task_type]
+            model_class = model_config['model']
+            
+            # Define objective function for Optuna
+            def objective(trial):
+                # Suggest hyperparameters based on model type
+                params = self._suggest_hyperparameters(trial, model_name, task_type)
+                
+                # Create and train model
+                model = model_class(**params)
+                
+                # Use cross-validation for evaluation
+                if task_type == 'classification':
+                    from sklearn.metrics import accuracy_score
+                    from sklearn.model_selection import cross_val_score
+                    scores = cross_val_score(model, X_train, y_train, cv=3, scoring='accuracy')
+                else:  # regression
+                    from sklearn.model_selection import cross_val_score
+                    scores = cross_val_score(model, X_train, y_train, cv=3, scoring='r2')
+                
+                return scores.mean()
+            
+            # Create Optuna study
+            study = optuna.create_study(direction='maximize')
+            study.optimize(objective, n_trials=n_trials)
+            
+            # Get best parameters and train final model
+            best_params = study.best_params
+            best_model = model_class(**best_params)
+            best_model.fit(X_train, y_train)
+            
+            # Calculate final metrics
+            y_pred = best_model.predict(X_train)
+            final_metrics = self._calculate_metrics(y_train, y_pred, task_type)
+            
+            optimization_result = {
+                'best_params': best_params,
+                'best_score': study.best_value,
+                'best_model': best_model,
+                'optimization_history': [trial.value for trial in study.trials],
+                'n_trials': len(study.trials),
+                'final_metrics': final_metrics,
+                'study_summary': {
+                    'best_trial_number': study.best_trial.number,
+                    'best_trial_params': study.best_trial.params,
+                    'optimization_time': sum([trial.duration.total_seconds() for trial in study.trials if trial.duration])
+                }
+            }
+            
+            logger.info(f"Hyperparameter optimization completed. Best score: {study.best_value:.4f}")
+            return optimization_result
+            
+        except Exception as e:
+            logger.error(f"Error during hyperparameter optimization: {e}")
+            return {
+                'error': str(e),
+                'best_params': {},
+                'best_score': 0,
+                'best_model': None,
+                'optimization_history': [],
+                'n_trials': 0,
+                'final_metrics': {}
+            }
+    
+    def _suggest_hyperparameters(self, trial, model_name: str, task_type: str) -> Dict[str, Any]:
+        """
+        Suggest hyperparameters for Optuna optimization
+        
+        Args:
+            trial: Optuna trial object
+            model_name: Name of the model
+            task_type: Type of task
+            
+        Returns:
+            Dictionary of suggested hyperparameters
+        """
+        params = {}
+        
+        if model_name == 'random_forest':
+            params['n_estimators'] = trial.suggest_int('n_estimators', 50, 300)
+            params['max_depth'] = trial.suggest_int('max_depth', 3, 20)
+            params['min_samples_split'] = trial.suggest_int('min_samples_split', 2, 20)
+            params['min_samples_leaf'] = trial.suggest_int('min_samples_leaf', 1, 10)
+            params['random_state'] = 42
+            
+        elif model_name == 'xgboost':
+            params['n_estimators'] = trial.suggest_int('n_estimators', 50, 300)
+            params['max_depth'] = trial.suggest_int('max_depth', 3, 10)
+            params['learning_rate'] = trial.suggest_float('learning_rate', 0.01, 0.3)
+            params['subsample'] = trial.suggest_float('subsample', 0.6, 1.0)
+            params['colsample_bytree'] = trial.suggest_float('colsample_bytree', 0.6, 1.0)
+            params['random_state'] = 42
+            
+        elif model_name == 'lightgbm':
+            params['n_estimators'] = trial.suggest_int('n_estimators', 50, 300)
+            params['max_depth'] = trial.suggest_int('max_depth', 3, 10)
+            params['learning_rate'] = trial.suggest_float('learning_rate', 0.01, 0.3)
+            params['num_leaves'] = trial.suggest_int('num_leaves', 10, 100)
+            params['subsample'] = trial.suggest_float('subsample', 0.6, 1.0)
+            params['colsample_bytree'] = trial.suggest_float('colsample_bytree', 0.6, 1.0)
+            params['random_state'] = 42
+            
+        elif model_name == 'svm':
+            params['C'] = trial.suggest_float('C', 0.1, 100, log=True)
+            params['kernel'] = trial.suggest_categorical('kernel', ['linear', 'rbf', 'poly'])
+            if params['kernel'] in ['rbf', 'poly']:
+                params['gamma'] = trial.suggest_categorical('gamma', ['scale', 'auto'])
+            params['random_state'] = 42
+            
+        elif model_name == 'neural_network':
+            n_layers = trial.suggest_int('n_layers', 1, 3)
+            hidden_sizes = []
+            for i in range(n_layers):
+                hidden_sizes.append(trial.suggest_int(f'n_units_l{i}', 10, 200))
+            params['hidden_layer_sizes'] = tuple(hidden_sizes)
+            params['activation'] = trial.suggest_categorical('activation', ['relu', 'tanh'])
+            params['alpha'] = trial.suggest_float('alpha', 1e-5, 1e-1, log=True)
+            params['learning_rate'] = trial.suggest_categorical('learning_rate', ['constant', 'adaptive'])
+            params['random_state'] = 42
+            params['max_iter'] = 2000
+            
+        elif model_name == 'knn':
+            params['n_neighbors'] = trial.suggest_int('n_neighbors', 3, 20)
+            params['weights'] = trial.suggest_categorical('weights', ['uniform', 'distance'])
+            params['metric'] = trial.suggest_categorical('metric', ['euclidean', 'manhattan'])
+            
+        elif model_name == 'decision_tree':
+            params['max_depth'] = trial.suggest_int('max_depth', 3, 20)
+            params['min_samples_split'] = trial.suggest_int('min_samples_split', 2, 20)
+            params['min_samples_leaf'] = trial.suggest_int('min_samples_leaf', 1, 10)
+            params['criterion'] = trial.suggest_categorical('criterion', 
+                ['gini', 'entropy'] if task_type == 'classification' else ['squared_error', 'absolute_error'])
+            params['random_state'] = 42
+            
+        elif model_name == 'linear_regression':
+            # Linear regression has limited hyperparameters
+            params['fit_intercept'] = trial.suggest_categorical('fit_intercept', [True, False])
+            
+        elif model_name == 'logistic_regression':
+            params['C'] = trial.suggest_float('C', 0.1, 100, log=True)
+            params['solver'] = trial.suggest_categorical('solver', ['liblinear', 'lbfgs'])
+            params['max_iter'] = trial.suggest_int('max_iter', 100, 1000)
+            params['random_state'] = 42
+            
+        else:
+            # Default parameters for unknown models
+            logger.warning(f"No specific hyperparameter suggestions for {model_name}")
+        
+        return params

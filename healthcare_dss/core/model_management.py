@@ -1176,3 +1176,157 @@ class ModelManager:
     def clear_cache(self):
         """Clear the in-memory model cache"""
         self.registry.clear_cache()
+
+    def evaluate_model(self, model_key: str, X_test: pd.DataFrame, y_test: pd.Series) -> Dict[str, Any]:
+        """
+        Evaluate a trained model on test data
+        
+        Args:
+            model_key: Unique identifier for the model
+            X_test: Test features
+            y_test: Test target values
+            
+        Returns:
+            Dictionary containing evaluation metrics and results
+        """
+        try:
+            # Load model from registry
+            model_data = self.registry.load_model(model_key)
+            if not model_data:
+                raise ValueError(f"Model {model_key} not found")
+            
+            model = model_data['model']
+            task_type = model_data.get('metadata', {}).get('task_type', 'classification')
+            
+            # Make predictions
+            y_pred = model.predict(X_test)
+            
+            # Delegate to evaluation engine for comprehensive evaluation
+            evaluation_result = self.evaluation_engine.evaluate_model_performance(
+                model=model,
+                X_test=X_test,
+                y_test=y_test,
+                y_pred=y_pred,
+                task_type=task_type
+            )
+            
+            # Add model information
+            evaluation_result['model_key'] = model_key
+            evaluation_result['model_name'] = model_data.get('metadata', {}).get('model_name', 'unknown')
+            evaluation_result['evaluation_timestamp'] = datetime.now().isoformat()
+            
+            logger.info(f"Model {model_key} evaluated successfully")
+            return evaluation_result
+            
+        except Exception as e:
+            logger.error(f"Error evaluating model {model_key}: {e}")
+            return {'error': str(e), 'model_key': model_key}
+
+    def get_model_recommendations(self, dataset_name: str, task_type: str = None) -> List[Dict[str, Any]]:
+        """
+        Get intelligent model recommendations for a dataset
+        
+        Args:
+            dataset_name: Name of the dataset
+            task_type: Optional task type (will be inferred if not provided)
+            
+        Returns:
+            List of model recommendations with suitability scores
+        """
+        try:
+            # Get dataset
+            if dataset_name not in self.data_manager.datasets:
+                raise ValueError(f"Dataset '{dataset_name}' not found")
+            
+            dataset = self.data_manager.datasets[dataset_name]
+            
+            # Auto-detect target column if not specified
+            target_column = None
+            common_targets = ['target', 'label', 'outcome', 'diagnosis', 'class']
+            for col in common_targets:
+                if col in dataset.columns:
+                    target_column = col
+                    break
+            
+            if target_column is None:
+                target_column = dataset.columns[-1]
+            
+            # Get intelligent recommendations
+            recommendations_result = self.get_intelligent_model_recommendations(
+                dataset_name=dataset_name,
+                target_column=target_column,
+                task_type=task_type
+            )
+            
+            if 'error' in recommendations_result:
+                return []
+            
+            # Extract and format recommendations
+            model_recommendations = recommendations_result.get('model_recommendations', [])
+            
+            # Add additional context and formatting
+            formatted_recommendations = []
+            for rec in model_recommendations:
+                formatted_rec = {
+                    'model_name': rec['model_name'],
+                    'suitability_score': rec['suitability_score'],
+                    'confidence': rec['confidence'],
+                    'recommended': rec['recommended'],
+                    'reasons': rec['reasons'],
+                    'task_type': recommendations_result.get('task_type', task_type),
+                    'dataset_characteristics': recommendations_result.get('data_characteristics', {})
+                }
+                formatted_recommendations.append(formatted_rec)
+            
+            logger.info(f"Generated {len(formatted_recommendations)} model recommendations for {dataset_name}")
+            return formatted_recommendations
+            
+        except Exception as e:
+            logger.error(f"Error getting model recommendations for {dataset_name}: {e}")
+            return []
+
+    def optimize_hyperparameters(self, model_name: str, X_train: pd.DataFrame, y_train: pd.Series, 
+                                task_type: str, n_trials: int = 50) -> Dict[str, Any]:
+        """
+        Optimize hyperparameters for a specific model
+        
+        Args:
+            model_name: Name of the model to optimize
+            X_train: Training features
+            y_train: Training target
+            task_type: Type of task ('classification' or 'regression')
+            n_trials: Number of optimization trials
+            
+        Returns:
+            Dictionary containing optimization results and best parameters
+        """
+        try:
+            # Delegate to training engine for hyperparameter optimization
+            optimization_result = self.training_engine.optimize_hyperparameters(
+                model_name=model_name,
+                X_train=X_train,
+                y_train=y_train,
+                task_type=task_type,
+                n_trials=n_trials
+            )
+            
+            # Add metadata
+            optimization_result['model_name'] = model_name
+            optimization_result['task_type'] = task_type
+            optimization_result['optimization_timestamp'] = datetime.now().isoformat()
+            optimization_result['training_samples'] = len(X_train)
+            optimization_result['feature_count'] = X_train.shape[1]
+            
+            logger.info(f"Hyperparameter optimization completed for {model_name}")
+            logger.info(f"Best score: {optimization_result.get('best_score', 'N/A')}")
+            
+            return optimization_result
+            
+        except Exception as e:
+            logger.error(f"Error optimizing hyperparameters for {model_name}: {e}")
+            return {
+                'error': str(e),
+                'model_name': model_name,
+                'task_type': task_type,
+                'optimization_timestamp': datetime.now().isoformat()
+            }

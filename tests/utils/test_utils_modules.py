@@ -789,8 +789,11 @@ class TestIntelligentBinning(unittest.TestCase):
         """Test handling of data with infinite values"""
         inf_data = np.array([1.0, 2.0, np.inf, 4.0, 5.0])
         
-        # Should handle infinite values gracefully
-        needs_binning, analysis = self.binning.detect_binning_need(inf_data, 'classification')
+        # Should handle infinite values gracefully - suppress expected warnings
+        import warnings
+        with warnings.catch_warnings():
+            warnings.filterwarnings("ignore", category=RuntimeWarning, module="numpy")
+            needs_binning, analysis = self.binning.detect_binning_need(inf_data, 'classification')
         self.assertIsInstance(needs_binning, bool)
         self.assertIsInstance(analysis, dict)
     
@@ -799,7 +802,11 @@ class TestIntelligentBinning(unittest.TestCase):
         # Create data that will result in imbalanced classes but still workable
         imbalanced_data = np.array([1, 1, 1, 1, 1, 1, 1, 1, 1, 100, 100, 100])
         
-        y_binned, binning_info = self.binning.apply_binning(imbalanced_data, 'quantile', 2)
+        # Suppress expected discretization warnings for edge case data
+        import warnings
+        with warnings.catch_warnings():
+            warnings.filterwarnings("ignore", category=UserWarning, module="sklearn")
+            y_binned, binning_info = self.binning.apply_binning(imbalanced_data, 'quantile', 2)
         
         # Check that binning info includes balance information
         self.assertIn('bin_counts', binning_info)

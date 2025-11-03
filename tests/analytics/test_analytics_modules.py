@@ -119,27 +119,48 @@ class TestModelEvaluationEngine(HealthcareDSSTestCase):
         features = features[numeric_features]
         target = dataset_df[target_col]
         
-        # Create realistic predictions that match the target distribution
-        target_sample = target.head(10)
-        unique_classes = target_sample.unique()
+        # Create balanced test data to avoid ROC AUC warnings
+        all_unique_classes = sorted(target.unique())
         
-        # Create predictions that maintain the class distribution
-        if len(unique_classes) == 2:
-            # Binary classification - create balanced predictions
-            y_pred = np.array([0, 1] * (len(target_sample) // 2) + [0] * (len(target_sample) % 2))
+        # Ensure we have at least 2 classes and balanced samples
+        if len(all_unique_classes) >= 2:
+            # Create balanced target and predictions with at least 2 samples per class
+            test_size = 10
+            samples_per_class = max(2, test_size // len(all_unique_classes))
+            
+            # Create balanced target sample
+            y_test_balanced = []
+            y_pred_balanced = []
+            
+            for cls in all_unique_classes:
+                y_test_balanced.extend([cls] * samples_per_class)
+                y_pred_balanced.extend([cls] * samples_per_class)
+            
+            # Trim to exact size
+            y_test_balanced = np.array(y_test_balanced[:test_size])
+            y_pred_balanced = np.array(y_pred_balanced[:test_size])
+            
+            # Shuffle predictions to make them more realistic
+            np.random.shuffle(y_pred_balanced)
+            
+            # Use balanced features
+            X_test_balanced = features.head(len(y_test_balanced))
         else:
-            # Multi-class - use the actual classes
-            y_pred = np.random.choice(unique_classes, len(target_sample))
+            # Single class case - use original approach
+            target_sample = target.head(10)
+            y_test_balanced = target_sample.values
+            y_pred_balanced = np.full(len(target_sample), all_unique_classes[0])
+            X_test_balanced = features.head(10)
         
         mock_model = Mock()
-        mock_model.predict.return_value = y_pred
+        mock_model.predict.return_value = y_pred_balanced
         
-        # Test model evaluation
+        # Test model evaluation with balanced data
         result = self.evaluation_engine.evaluate_model_performance(
             model=mock_model,
-            X_test=features.head(10),
-            y_test=target.head(10),
-            y_pred=y_pred,
+            X_test=X_test_balanced,
+            y_test=y_test_balanced,
+            y_pred=y_pred_balanced,
             task_type='classification'
         )
         

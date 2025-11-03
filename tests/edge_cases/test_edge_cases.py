@@ -246,13 +246,16 @@ class TestEdgeCases(unittest.TestCase):
             features = dataset.drop(columns=['target'])
             target = dataset['target']
             
-            # Test model training with no variance data
-            result = self.training_engine.train_model(
-                features=features,
-                target=target,
-                model_name='random_forest',
-                task_type='classification'
-            )
+            # Test model training with no variance data - suppress expected warnings
+            import warnings
+            with warnings.catch_warnings():
+                warnings.filterwarnings("ignore", category=UserWarning, module="sklearn")
+                result = self.training_engine.train_model(
+                    features=features,
+                    target=target,
+                    model_name='random_forest',
+                    task_type='classification'
+                )
         except Exception as e:
             # Should handle no variance data gracefully
             self.assertIsInstance(e, (ValueError, RuntimeError))
@@ -338,8 +341,11 @@ class TestEdgeCases(unittest.TestCase):
                 "identical_points", features=['feature1', 'feature2']
             )
             
-            # Test K-means with identical points
-            kmeans_result = self.clustering_analyzer.perform_kmeans_clustering(X, n_clusters=2)
+            # Test K-means with identical points - suppress expected warnings
+            import warnings
+            with warnings.catch_warnings():
+                warnings.filterwarnings("ignore", category=UserWarning, module="sklearn")
+                kmeans_result = self.clustering_analyzer.perform_kmeans_clustering(X, n_clusters=2)
         except Exception as e:
             # Should handle identical points gracefully
             self.assertIsInstance(e, (ValueError, RuntimeError, TypeError))

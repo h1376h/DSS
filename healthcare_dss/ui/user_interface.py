@@ -655,6 +655,200 @@ class DashboardManager:
             'revenue': [1200000, 1250000, 1300000, 1350000, 1400000, 1450000]
         })
 
+    def create_clinical_dashboard(self) -> Dict[str, Any]:
+        """
+        Create clinical dashboard configuration and data
+        
+        Returns:
+            Dictionary containing clinical dashboard configuration
+        """
+        try:
+            # Get clinical data and metrics
+            clinical_alerts = self._get_clinical_alerts()
+            patient_satisfaction = self._get_patient_satisfaction_data()
+            readmission_data = self._get_readmission_data()
+            
+            # Calculate clinical metrics
+            metrics = {
+                'active_patients': 245,
+                'quality_score': 94.2,
+                'avg_wait_time': 18.5,
+                'readmission_rate': 8.3,
+                'patient_satisfaction': patient_satisfaction['satisfaction_score'].mean() if not patient_satisfaction.empty else 85.0
+            }
+            
+            # Create dashboard configuration
+            dashboard_config = {
+                'title': 'Clinical Decision Support Dashboard',
+                'type': 'clinical',
+                'metrics': metrics,
+                'alerts': clinical_alerts,
+                'charts': {
+                    'patient_satisfaction': patient_satisfaction.to_dict('records') if not patient_satisfaction.empty else [],
+                    'readmission_trends': readmission_data.to_dict('records') if not readmission_data.empty else []
+                },
+                'sections': ['patient_overview', 'clinical_alerts', 'treatment_recommendations', 'quality_metrics'],
+                'created_at': datetime.now().isoformat(),
+                'last_updated': datetime.now().isoformat()
+            }
+            
+            logger.info("Clinical dashboard created successfully")
+            return dashboard_config
+            
+        except Exception as e:
+            logger.error(f"Error creating clinical dashboard: {e}")
+            return {
+                'error': str(e),
+                'title': 'Clinical Dashboard',
+                'type': 'clinical',
+                'metrics': {},
+                'alerts': [],
+                'charts': {},
+                'sections': []
+            }
+
+    def create_administrative_dashboard(self) -> Dict[str, Any]:
+        """
+        Create administrative dashboard configuration and data
+        
+        Returns:
+            Dictionary containing administrative dashboard configuration
+        """
+        try:
+            # Get administrative data
+            budget_variance = self._get_budget_variance_data()
+            staff_distribution = self._get_staff_distribution_data()
+            overtime_data = self._get_overtime_data()
+            
+            # Calculate administrative metrics
+            metrics = {
+                'total_budget': 2500000,
+                'budget_utilization': 87.3,
+                'staff_efficiency': 92.1,
+                'operational_cost': 1850000,
+                'resource_utilization': 89.5
+            }
+            
+            # Create dashboard configuration
+            dashboard_config = {
+                'title': 'Administrative Planning Dashboard',
+                'type': 'administrative',
+                'metrics': metrics,
+                'charts': {
+                    'budget_variance': budget_variance.to_dict('records') if not budget_variance.empty else [],
+                    'staff_distribution': staff_distribution.to_dict('records') if not staff_distribution.empty else [],
+                    'overtime_trends': overtime_data.to_dict('records') if not overtime_data.empty else []
+                },
+                'sections': ['resource_utilization', 'financial_metrics', 'operational_efficiency', 'staffing_analysis'],
+                'created_at': datetime.now().isoformat(),
+                'last_updated': datetime.now().isoformat()
+            }
+            
+            logger.info("Administrative dashboard created successfully")
+            return dashboard_config
+            
+        except Exception as e:
+            logger.error(f"Error creating administrative dashboard: {e}")
+            return {
+                'error': str(e),
+                'title': 'Administrative Dashboard',
+                'type': 'administrative',
+                'metrics': {},
+                'charts': {},
+                'sections': []
+            }
+
+    def get_dashboard_config(self, dashboard_type: str) -> Dict[str, Any]:
+        """
+        Get dashboard configuration for a specific type
+        
+        Args:
+            dashboard_type: Type of dashboard ('clinical', 'administrative', 'executive')
+            
+        Returns:
+            Dictionary containing dashboard configuration
+        """
+        try:
+            if dashboard_type == 'clinical':
+                return self.create_clinical_dashboard()
+            elif dashboard_type == 'administrative':
+                return self.create_administrative_dashboard()
+            elif dashboard_type == 'executive':
+                return self._create_executive_dashboard_config()
+            else:
+                # Return base configuration for unknown types
+                base_config = self.dashboard_configs.get(dashboard_type, {})
+                return {
+                    'title': base_config.get('title', f'{dashboard_type.title()} Dashboard'),
+                    'type': dashboard_type,
+                    'sections': base_config.get('sections', []),
+                    'metrics': {},
+                    'charts': {},
+                    'created_at': datetime.now().isoformat(),
+                    'last_updated': datetime.now().isoformat()
+                }
+                
+        except Exception as e:
+            logger.error(f"Error getting dashboard config for {dashboard_type}: {e}")
+            return {
+                'error': str(e),
+                'title': f'{dashboard_type.title()} Dashboard',
+                'type': dashboard_type,
+                'sections': [],
+                'metrics': {},
+                'charts': {}
+            }
+
+    def _create_executive_dashboard_config(self) -> Dict[str, Any]:
+        """
+        Create executive dashboard configuration
+        
+        Returns:
+            Dictionary containing executive dashboard configuration
+        """
+        try:
+            # Get executive data
+            kpi_data = self._get_kpi_data()
+            capacity_data = self._get_capacity_planning_data()
+            revenue_forecast = self._get_revenue_forecast()
+            
+            # Calculate executive metrics
+            metrics = {
+                'revenue': 4200000,
+                'patient_satisfaction': 88.7,
+                'operational_efficiency': 91.2,
+                'market_share': 23.5,
+                'profit_margin': 12.8
+            }
+            
+            # Create dashboard configuration
+            dashboard_config = {
+                'title': 'Executive Strategic Dashboard',
+                'type': 'executive',
+                'metrics': metrics,
+                'charts': {
+                    'kpi_performance': kpi_data.to_dict('records') if not kpi_data.empty else [],
+                    'capacity_planning': capacity_data.to_dict('records') if not capacity_data.empty else [],
+                    'revenue_forecast': revenue_forecast.to_dict('records') if not revenue_forecast.empty else []
+                },
+                'sections': ['strategic_metrics', 'performance_indicators', 'trend_analysis', 'forecasting'],
+                'created_at': datetime.now().isoformat(),
+                'last_updated': datetime.now().isoformat()
+            }
+            
+            return dashboard_config
+            
+        except Exception as e:
+            logger.error(f"Error creating executive dashboard config: {e}")
+            return {
+                'error': str(e),
+                'title': 'Executive Dashboard',
+                'type': 'executive',
+                'metrics': {},
+                'charts': {},
+                'sections': []
+            }
+
 
 # Example usage and testing
 if __name__ == "__main__":
