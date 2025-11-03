@@ -1,0 +1,21 @@
+\contentsline {section}{\numberline {\lr {1}}مقدمه}{1}{}%
+\contentsline {subsection}{\numberline {\lr {1.1}}تعریف مسئله تحقیق}{1}{}%
+\contentsline {subsection}{\numberline {\lr {1.2}}مسائل حل شده توسط سیستم}{2}{}%
+\contentsline {section}{\numberline {\lr {2}}روش کار}{2}{}%
+\contentsline {subsection}{\numberline {\lr {2.1}}روش‌شناسی کلی پروژه}{3}{}%
+\contentsline {subsection}{\numberline {\lr {2.2}}داده‌ها و آماده‌سازی}{3}{}%
+\contentsline {subsubsection}{\numberline {\lr {2.2.1}}مجموعه‌داده‌های مورد استفاده}{3}{}%
+\contentsline {subsection}{\numberline {\lr {2.3}}پیش‌پردازش داده‌ها}{4}{}%
+\contentsline {subsection}{\numberline {\lr {2.4}}طراحی رابط کاربری مبتنی بر نقش}{4}{}%
+\contentsline {subsection}{\numberline {\lr {2.5}}پیاده‌سازی مدل}{7}{}%
+\contentsline {subsubsection}{\numberline {\lr {2.5.1}}نوع مدل و ساختار شبکه}{7}{}%
+\contentsline {section}{\numberline {\lr {3}}ارزیابی و نتایج}{8}{}%
+\contentsline {subsection}{\numberline {\lr {3.1}}روش و معیار ارزیابی}{8}{}%
+\contentsline {subsection}{\numberline {\lr {3.2}}آزمایش‌ها و نتایج}{8}{}%
+\contentsline {subsubsection}{\numberline {\lr {3.2.1}}نتایج مدل‌های یادگیری ماشین}{8}{}%
+\contentsline {subsubsection}{\numberline {\lr {3.2.2}}نتایج تست‌های سیستم}{9}{}%
+\contentsline {section}{\numberline {\lr {4}}جمع‌بندی و پیشنهادها}{9}{}%
+\contentsline {subsection}{\numberline {\lr {4.1}}جمع‌بندی کلی از نتایج}{9}{}%
+\contentsline {subsection}{\numberline {\lr {4.2}}چالش‌های موجود در روند کار}{10}{}%
+\contentsline {subsection}{\numberline {\lr {4.3}}پیشنهادها برای بهبود پروژه و مسیرهای آتی}{10}{}%
+\contentsline {section}{\numberline {\lr {5}}منابع و مراجع}{11}{}%
