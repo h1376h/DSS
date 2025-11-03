@@ -54,7 +54,11 @@
 \end{center}
 }
 
-\author{{\iranfont \large حامد حیدریان، ایمان منتظمی، محمدمهدی عباسی}\\[0.5cm]
+\author{{\iranfont \large حامد حیدریان}\\
+{\normalsize شماره دانشجویی: ۴۰۳۱۳۱۴۱۰۲۱}\\[0.3cm]
+{\normalsize سایر اعضای پروژه:}\\
+{\normalsize ایمان منتظمی}\\
+{\normalsize محمدمهدی عباسی}\\[0.5cm]
 {\normalsize درس: سیستم‌های تصمیم‌یار}\\
 {\normalsize استاد: دکتر رشیدی}\\
 {\normalsize نسخه سیستم: \lr{1.0.0}}\\
@@ -163,20 +167,55 @@
 {\yekanfont \textbf{مجموعه‌داده‌های واقعی}}:
 \begin{itemize}
 \item \textbf{دیابت}\footnote{Diabetes Dataset} (\lr{442} نمونه، \lr{10} ویژگی): پیش‌بینی پیشرفت بیماری دیابت با متغیر هدف رگرسیون\footnote{Regression Task Type}
+  - ویژگی‌های کلیدی: سن\footnote{Age}، جنس\footnote{Gender}، شاخص توده بدنی\footnote{Body Mass Index (BMI)}، فشار خون\footnote{Blood Pressure}، شش متغیر سرمی\footnote{Serum Variables} نرمال‌سازی شده
+  - متغیر هدف اصلی: مقدار پیوسته ۲۱۴ مقدار منحصربه‌فرد، دامنه ۲۵-۳۴۶
+  - عملکرد بهترین مدل: رگرسیون خطی با ضریب تعیین ۰.۴۵۳
+
 \item \textbf{سرطان پستان}\footnote{Breast Cancer Dataset} (\lr{569} نمونه، \lr{30} ویژگی): تشخیص سرطان پستان با دقت بالا
+  - ویژگی‌های کلیدی: شعاع میانگین\footnote{Mean Radius}، بافت میانگین\footnote{Mean Texture}، محیط میانگین\footnote{Mean Perimeter}، مساحت میانگین\footnote{Mean Area}، نرمی میانگین\footnote{Mean Smoothness}
+  - متغیر هدف اصلی: طبقه‌بندی دوکلاسه\footnote{Binary Classification}: ۰=بدخیم، ۱=خوش‌خیم
+  - عملکرد بهترین مدل: رگرسیون لجستیک با دقت ۹۸.۲٪
 \item \textbf{شراب}\footnote{Wine Dataset} (\lr{178} نمونه، \lr{13} ویژگی): طبقه‌بندی انواع شراب برای تحقیقات پزشکی
+  - ویژگی‌های کلیدی: الکل\footnote{Alcohol Content}، اسید مالیک\footnote{Malic Acid}، فلاونوئیدها\footnote{Flavonoids}، فنول‌های غیرفلاونوئیدی\footnote{Non-flavonoid Phenols}
+  - متغیر هدف: طبقه‌بندی سه‌کلاسه\footnote{Three-class Classification}
+  - عملکرد بهترین مدل: جنگل تصادفی با دقت ۱۰۰٪
+
 \item \textbf{ظرفیت بیمارستان}\footnote{Hospital Capacity Dataset} (\lr{20,640} نمونه، \lr{8} ویژگی): داده‌های ظرفیت بیمارستان
+  - ویژگی‌های کلیدی: تعداد تخت\footnote{Number of Beds}، سن بیمار\footnote{Patient Age}، نسبت کادر\footnote{Staff Ratio}، فاصله تا مرکز\footnote{Distance to Center}
+  - متغیر هدف اصلی: مقدار ظرفیت (۳,۸۴۲ مقدار منحصربه‌فرد، دامنه ۰.۱۵-۵.۰)
+  - عملکرد بهترین مدل: جنگل تصادفی با ضریب تعیین ۰.۸۰۵
+
 \item \textbf{هزینه‌های بهداشتی جهانی}\footnote{Global Healthcare Expenditure Dataset} (\lr{117} نمونه، \lr{14} ویژگی): هزینه‌های بهداشتی \lr{16} کشور از \lr{2015} تا \lr{2024}
+  - کامل بودن داده‌ها: ۹۴.۲٪ (۶۸ مقدار گمشده از ۱,۱۷۰ مقدار کل)
+  - بالاترین هزینه سرانه: ۲,۴۲۲.۶۴ دلار سالانه
+  - کمترین هزینه سرانه: ۳۳.۹۹ دلار سالانه
 \end{itemize}
 
 {\iranfont \textbf{مجموعه‌داده‌های مصنوعی}}:
 \begin{itemize}
-\item \textbf{جمعیت‌شناسی بیماران}\footnote{Patient Demographics Synthetic Dataset} (\lr{1,000} نمونه، \lr{20} ویژگی)
-\item \textbf{نتایج بالینی}\footnote{Clinical Outcomes Synthetic Dataset} (\lr{1,000} نمونه، \lr{7} ویژگی)
-\item \textbf{عملکرد کادر}\footnote{Staff Performance Synthetic Dataset} (\lr{200} نمونه، \lr{9} ویژگی)
-\item \textbf{عملکرد بخش‌ها}\footnote{Department Performance Synthetic Dataset} (\lr{7} نمونه، \lr{8} ویژگی)
-\item \textbf{معیارهای مالی}\footnote{Financial Metrics Synthetic Dataset} (\lr{24} نمونه، \lr{8} ویژگی)
-\item \textbf{اثربخشی دارو}\footnote{Medication Effectiveness Dataset} (\lr{178} نمونه، \lr{14} ویژگی)
+\item \textbf{جمعیت‌شناسی بیماران}\footnote{Patient Demographics Synthetic Dataset} (\lr{1,000} نمونه، \lr{20} ویژگی): ویژگی‌های جمعیت‌شناختی بیماران
+  - متغیر هدف اصلی: ریسک بستری مجدد (۱,۰۰۰ مقدار منحصربه‌فرد، دامنه ۰-۱)
+  - شامل: سن، جنس، وزن\footnote{Weight}، قد\footnote{Height}، شاخص توده بدنی، فشار خون، ضربان قلب\footnote{Heart Rate}، کلسترول\footnote{Cholesterol}، گلوکز\footnote{Glucose}
+
+\item \textbf{نتایج بالینی}\footnote{Clinical Outcomes Synthetic Dataset} (\lr{1,000} نمونه، \lr{7} ویژگی): نتایج درمان و رضایت بیماران
+  - متغیرهای هدف: موفقیت درمان (طبقه‌بندی دوکلاسه)، امتیاز کیفیت زندگی (۱,۰۰۰ مقدار منحصربه‌فرد)
+  - عملکرد بهترین مدل: رگرسیون خطی با ضریب تعیین ۰.۰۰۲ برای امتیاز کیفیت زندگی
+
+\item \textbf{عملکرد کادر}\footnote{Staff Performance Synthetic Dataset} (\lr{200} نمونه، \lr{9} ویژگی): ارزیابی عملکرد کارکنان
+  - متغیرهای هدف: امتیاز رضایت بیمار، رتبه‌بندی عملکرد (هر کدام ۲۰۰ مقدار منحصربه‌فرد)
+  - ویژگی‌های کلیدی: زمان پاسخ به دقیقه\footnote{Response Time in Minutes}، ساعات اضافه‌کاری\footnote{Overtime Hours}، سال‌های تجربه\footnote{Years of Experience}، بخش
+
+\item \textbf{عملکرد بخش‌ها}\footnote{Department Performance Synthetic Dataset} (\lr{7} نمونه، \lr{8} ویژگی): کارایی ۷ بخش مختلف بیمارستان
+  - متغیر هدف اصلی: امتیاز کیفیت (۷ مقدار منحصربه‌فرد)
+  - بخش‌ها: اورژانس\footnote{Emergency}، قلب\footnote{Cardiology}، انکولوژی\footnote{Oncology}، اطفال\footnote{Pediatrics}، جراحی\footnote{Surgery}، مراقبت‌های ویژه\footnote{Intensive Care}، رادیولوژی\footnote{Radiology}
+
+\item \textbf{معیارهای مالی}\footnote{Financial Metrics Synthetic Dataset} (\lr{24} نمونه، \lr{8} ویژگی): شاخص‌های مالی ۲۴ ماه
+  - متغیرهای کلیدی: درآمد\footnote{Revenue}، هزینه‌ها\footnote{Costs}، حجم بیماران\footnote{Patient Volume}، میانگین مدت اقامت\footnote{Average Length of Stay}
+  - عملکرد بهترین مدل: رگرسیون خطی با ضریب تعیین ۰.۳۷۹
+
+\item \textbf{اثربخشی دارو}\footnote{Medication Effectiveness Dataset} (\lr{178} نمونه، \lr{14} ویژگی): تحلیل اثربخشی داروها
+  - متغیر هدف اصلی: اثربخشی (۳ مقدار منحصربه‌فرد)
+  - شامل ۱۳ جزء و نوع دارو\footnote{Drug Components and Type}
 \end{itemize}
 
 \subsection{پیش‌پردازش داده‌ها}
@@ -302,6 +341,23 @@
 \item درخت تصمیم: دقت = \lr{94.4\%}، \lr{$F_1 = 0.945$}
 \end{itemize}
 
+\textbf{مجموعه‌داده ظرفیت بیمارستان} (\lr{20,640} نمونه، \lr{8} ویژگی، رگرسیون):
+\begin{itemize}
+\item بهترین مدل: جنگل تصادفی با \lr{$R^2 = 0.805$}
+\item جنگل تصادفی: \lr{$R^2 = 0.805$}، \lr{$RMSE = 0.506$}، \lr{$CV_{mean} = 0.810 \pm 0.007$}
+\item رگرسیون خطی: \lr{$R^2 = 0.576$}، \lr{$RMSE = 0.746$}، \lr{$CV_{mean} = 0.601 \pm 0.017$}
+\item درخت تصمیم: \lr{$R^2 = 0.619$}، \lr{$RMSE = 0.707$}، \lr{$CV_{mean} = 0.614 \pm 0.006$}
+\end{itemize}
+
+\textbf{آمار کلی عملکرد}:
+\begin{itemize}
+\item میانگین دقت کل: \lr{45.3\%}\footnote{Overall Average Accuracy}
+\item حداکثر دقت: \lr{100.0\%} (مجموعه‌داده شراب - جنگل تصادفی)\footnote{Maximum Accuracy}
+\item حداقل دقت: \lr{0\%} (مجموعه‌داده‌های کوچک)\footnote{Minimum Accuracy}
+\item انحراف معیار دقت: \lr{$\sigma = 40.7\%$}\footnote{Accuracy Standard Deviation}
+\item تعداد کل مدل‌های آموزش‌دیده: ۲۴ مدل\footnote{Total Trained Models Count}
+\end{itemize}
+
 \subsubsection{نتایج تست‌های سیستم}
 
 \textbf{عملکرد کلی سیستم}:
@@ -310,6 +366,9 @@
 \item نرخ موفقیت کلی: \lr{89.94\%}
 \item زمان اجرای کل: \lr{15.86} ثانیه
 \item تعداد مجموعه تست: ۶ مجموعه
+\item تعداد خطاها: ۱۴ خطا
+\item تعداد شکست‌ها: ۲ شکست
+\item تعداد تست‌های رد شده: ۷ تست
 \end{itemize}
 
 \begin{table}[H]
@@ -338,51 +397,119 @@
 
 {\yekanfont \textbf{دستاوردهای کلیدی}}:
 \begin{itemize}
-\item پیاده‌سازی کامل سیستم: \lr{12} مجموعه‌داده مختلف بهداشتی با \lr{24,000+} رکورد
-\item عملکرد بالای مدل‌ها: دقت \lr{98.2\%} در تشخیص سرطان پستان، \lr{100\%} در طبقه‌بندی شراب
-\item معماری مدولار: چهار زیرسیستم اصلی با \lr{159} تست جامع (\lr{89.94\%} موفقیت)
-\item داشبوردهای تخصصی\footnote{Specialized Dashboards}: ۵ نوع داشبورد برای نقش‌های مختلف
+\item پیاده‌سازی کامل سیستم: \lr{12} مجموعه‌داده مختلف بهداشتی با \lr{24,000+} رکورد (بزرگترین: ۲۰,۶۴۰ رکورد ظرفیت بیمارستان)
+\item عملکرد بالای مدل‌ها: دقت \lr{98.2\%} در تشخیص سرطان پستان، \lr{100\%} در طبقه‌بندی شراب، \lr{$R^2 = 0.805$} در پیش‌بینی ظرفیت بیمارستان
+\item معماری مدولار: چهار زیرسیستم اصلی با \lr{159} تست جامع (\lr{89.94\%} موفقیت، زمان اجرا \lr{15.86} ثانیه)
+\item داشبوردهای تخصصی: ۵ نوع داشبورد برای کادر بالینی، مدیریت اجرایی، رهبری بحرانی، مدیر بخش، مدیر مالی
+\item پیاده‌سازی روش‌شناسی: کریسپ-دی‌ام و مدل چهار مرحله‌ای هربرت سایمون با کلاس‌های تخصصی
 \item تنوع الگوریتم‌ها: \lr{8} الگوریتم یادگیری ماشین با \lr{24} مدل آموزش‌دیده
+\item قابلیت‌های پیشرفته: تحلیل سری زمانی، کلاسترینگ، قوانین انجمنی، تحلیل تجویزی، هوش مصنوعی قابل تفسیر
+\end{itemize}
+
+\textbf{عملکرد مدل‌ها}:
+\begin{itemize}
+\item مدل‌های طبقه‌بندی: عملکرد عالی با دقت ۹۱.۲٪ تا ۱۰۰٪ (میانگین ۹۶.۳٪)
+\item مدل‌های رگرسیون: عملکرد متغیر از \lr{$R^2 = -0.055$} تا \lr{0.805} بسته به پیچیدگی داده‌ها
+\item بهترین الگوریتم‌ها: جنگل تصادفی برای مجموعه‌داده‌های بزرگ، رگرسیون خطی و لجستیک برای داده‌های ساده
+\item سرعت پردازش: میانگین ۰.۱ ثانیه برای هر تست، مناسب برای کاربردهای بلادرنگ
+\end{itemize}
+
+\textbf{کیفیت سیستم}:
+\begin{itemize}
+\item معماری مدولار و قابل توسعه
+\item پشتیبانی از استانداردهای کدنویسی
+\item مستندات جامع و کامل
 \end{itemize}
 
 \subsection{چالش‌های موجود در روند کار}
 
-{\iranfont \textbf{چالش‌های فنی شناسایی شده}}:
+بر اساس نتایج تست‌ها، چالش‌های زیر شناسایی شده است:
+
+{\iranfont \textbf{مسائل ماژول مدیریت مدل‌ها}} (مجموعه تست ۱ - ۶۰٪ موفقیت):
 \begin{itemize}
-\item مسائل ماژول مدیریت مدل‌ها (۶۰٪ موفقیت)
-\item مسائل رابط کاربری (۷۸.۵۷٪ موفقیت)
-\item چالش‌های معماری در مدیریت گواهی‌های امنیتی
+\item متدهای گمشده: \lr{evaluate\_model}، \lr{get\_model\_recommendations}، \lr{optimize\_hyperparameters}
+\item خطاهای \lr{AttributeError}: ۹ خطا مربوط به عدم وجود متدهای مورد انتظار
+\item مسائل تست: مشکل در شبیه‌سازی اجزای موتور آموزش مدل و موتور ارزیابی مدل
+\item نیاز به توسعه: تکمیل متدهای ارزیابی مدل و بهینه‌سازی هایپرپارامتر
+\end{itemize}
+
+\textbf{مسائل رابط کاربری} (مجموعه تست ۳ - ۷۸.۵۷٪ موفقیت):
+\begin{itemize}
+\item متدهای گمشده در مدیر داشبورد: \lr{create\_clinical\_dashboard}، \lr{create\_administrative\_dashboard}، \lr{get\_dashboard\_config}
+\item مشکل در ابزارهای رابط کاربری: خطا در \lr{create\_metric\_columns} با ورودی فهرست به جای دیکشنری
+\item تست \lr{system\_initialization\_check}: شکست در بررسی راه‌اندازی سیستم
+\end{itemize}
+
+\textbf{چالش‌های معماری}:
+\begin{itemize}
+\item مدیریت گواهی‌های امنیتی برای دانلود مجموعه‌داده‌ها
+\item پیکربندی اس‌کیولایت برای پشتیبانی چندنخی
+\item مدیریت هشدارهای منسوخی از کتابخانه‌های مختلف
 \end{itemize}
 
 \textbf{چالش‌های داده‌ای}:
 \begin{itemize}
-\item وجود \lr{68} مقدار گمشده در مجموعه‌داده هزینه‌های بهداشتی
+\item کیفیت داده‌ها: وجود \lr{68} مقدار گمشده در مجموعه‌داده هزینه‌های بهداشتی، نیاز به پیش‌پردازش پیچیده برای برخی مجموعه‌داده‌ها
+\item محدودیت‌های حجم: برخی مجموعه‌داده‌ها (مانند لینرود با ۲۰ نمونه) بسیار کوچک هستند
 \item عدم تعادل در اندازه مجموعه‌داده‌ها (از \lr{7} تا \lr{20,640} نمونه)
+\end{itemize}
+
+\textbf{چالش‌های عملکرد}:
+\begin{itemize}
+\item مدل‌های رگرسیون: عملکرد نسبتاً ضعیف در مجموعه‌داده دیابت (\lr{$R^2 = 0.453$})
+\item تفاوت قابل‌توجه در عملکرد الگوریتم‌های مختلف
+\item پیچیدگی سیستم: مدیریت ۲۳ وابستگی خارجی، نیاز به تنظیمات پیچیده برای محیط‌های مختلف
 \end{itemize}
 
 \subsection{پیشنهادها برای بهبود پروژه و مسیرهای آتی}
 
-\textbf{بهبودهای فوری (اولویت بالا)}:
+\textbf{رفع مسائل فنی شناسایی شده}:
 \begin{itemize}
-\item تکمیل مدیر مدل: پیاده‌سازی متدهای گمشده
-\item تکمیل مدیر داشبورد: افزودن متدهای ایجاد داشبورد
-\item رفع خطاهای رابط کاربری
+\item تکمیل مدیر مدل: پیاده‌سازی متدهای \lr{evaluate\_model}، \lr{get\_model\_recommendations}، \lr{optimize\_hyperparameters}
+\item تکمیل مدیر داشبورد: افزودن متدهای \lr{create\_clinical\_dashboard}، \lr{create\_administrative\_dashboard}، \lr{get\_dashboard\_config}
+\item رفع خطاهای رابط کاربری: اصلاح \lr{create\_metric\_columns} و \lr{system\_initialization\_check}
 \item بهبود پوشش تست: افزایش نرخ موفقیت از \lr{89.94\%} به \lr{95\%+}
+\end{itemize}
+
+\textbf{بهینه‌سازی عملکرد (اولویت متوسط)}:
+\begin{itemize}
+\item بهبود مدل‌های رگرسیون: مهندسی ویژگی پیشرفته برای افزایش \lr{$R^2$} از \lr{0.453} به \lr{0.7+}
+\item پیاده‌سازی روش‌های ترکیبی: ترکیب مدل‌ها برای افزایش دقت
+\item بهینه‌سازی هایپرپارامتر: استفاده کامل از اپتونا برای تنظیم خودکار
+\item بهبود عملکرد مجموعه‌داده‌های کوچک: تکنیک‌های تقویت داده برای مجموعه‌داده‌هایی با کمتر از ۱۰۰ نمونه
 \end{itemize}
 
 \textbf{توسعه‌های میان‌مدت}:
 \begin{itemize}
-\item افزایش قابلیت‌ها: اضافه کردن مجموعه‌داده‌های بیشتر
+\item افزایش قابلیت‌ها: اضافه کردن مجموعه‌داده‌های بیشتر و متنوع‌تر
 \item پیاده‌سازی الگوریتم‌های یادگیری عمیق\footnote{Deep Learning Algorithms Implementation}
+\item توسعه قابلیت‌های تحلیل سری زمانی\footnote{Time Series Analysis Capabilities Development}
 \item بهبود رابط کاربری: طراحی داشبوردهای تعاملی‌تر\footnote{More Interactive Dashboard Design}
+\item اضافه کردن قابلیت‌های نظارت بلادرنگ\footnote{Real-time Monitoring Capabilities}
+\item پیاده‌سازی طراحی پاسخگو به موبایل\footnote{Mobile-responsive Design Implementation}
 \item یکپارچگی: اتصال به پایگاه‌داده‌های بیمارستانی واقعی\footnote{Real Hospital Database Connection}
+\item پشتیبانی از استانداردهای بهداشتی (اچ‌ال‌هفت فایر)
+\item یکپارچگی با سیستم‌های موجود بیمارستان\footnote{Integration with Existing Hospital Systems}
 \end{itemize}
 
 \textbf{چشم‌انداز بلندمدت}:
 \begin{itemize}
-\item فناوری‌های نوین: پیاده‌سازی مدل‌های زبانی بزرگ\footnote{Large Language Models Implementation}
+\item فناوری‌های نوین: پیاده‌سازی مدل‌های زبانی بزرگ\footnote{Large Language Models Implementation} برای تحلیل متن‌های پزشکی\footnote{Medical Text Analysis}
 \item استفاده از بینایی کامپیوتری\footnote{Computer Vision Usage} برای تحلیل تصاویر پزشکی\footnote{Medical Image Analysis}
 \item یکپارچگی با اینترنت اشیا\footnote{Internet of Things Integration} و سنسورهای پزشکی\footnote{Medical Sensors}
+\item کاربردهای پیشرفته: سیستم هشدار زودهنگام برای اپیدمی‌ها\footnote{Early Warning System for Epidemics}
+\item پیش‌بینی روندهای بهداشتی جمعیت\footnote{Population Health Trend Prediction}
+\item بهینه‌سازی منابع در سطح ملی\footnote{National-level Resource Optimization}
+\end{itemize}
+
+\textbf{پیشنهادات تحقیقاتی}:
+\begin{itemize}
+\item ارزیابی بالینی: مطالعه تأثیر سیستم بر نتایج بیماران در محیط واقعی\footnote{System Impact Study on Patient Outcomes in Real Environment}
+\item ارزیابی میزان رضایت کاربران و پذیرش سیستم\footnote{User Satisfaction and System Acceptance Evaluation}
+\item تحلیل هزینه-فایده پیاده‌سازی سیستم\footnote{Cost-benefit Analysis of System Implementation}
+\item توسعه روش‌شناسی: طراحی معیارهای ارزیابی جدید برای سیستم‌های پشتیبانی تصمیم‌گیری بهداشتی\footnote{New Evaluation Criteria Design for Healthcare DSS}
+\item توسعه چارچوب‌های استاندارد برای پیاده‌سازی\footnote{Standard Framework Development for Implementation}
+\item مقایسه با سیستم‌های مشابه بین‌المللی\footnote{Comparison with Similar International Systems}
 \end{itemize}
 
 \section{منابع و مراجع}
@@ -394,11 +521,19 @@
 
 \item فرایند استاندارد صنعتی برای داده‌کاوی (کریسپ-دی‌ام) (۲۰۰۰).
 
+\item استانداردهای داده‌های بهداشتی:
+\begin{itemize}
+\item مشخصات اچ‌ال‌هفت فایر (۲۰۲۳). منابع قابلیت تعامل سریع مراقبت‌های بهداشتی
+\item استاندارد دایکام برای تصویربرداری پزشکی
+\item اسنومد سی‌تی برای اصطلاح‌شناسی بالینی
+\end{itemize}
+
 \item کتابخانه‌های یادگیری ماشین:
 \begin{itemize}
 \item ساینت‌کیت لرن (>=۱.۳.۰): https://scikit-learn.org/
 \item ایکس‌جی‌بوست (>=۱.۷.۰): https://xgboost.readthedocs.io/
 \item لایت‌جی‌بی‌ام (>=۴.۰.۰): https://lightgbm.readthedocs.io/
+\item اپتونا (>=۳.۳.۰): https://optuna.org/
 \end{itemize}
 
 \item هوش مصنوعی قابل تفسیر:
@@ -411,13 +546,31 @@
 \begin{itemize}
 \item استریم‌لیت (>=۱.۲۸.۰): https://streamlit.io/
 \item پلاتلی (>=۵.۱۵.۰): https://plotly.com/
+\item دش (>=۲.۱۴.۰): https://dash.plotly.com/
 \end{itemize}
 
-\item مخزن یادگیری ماشین دانشگاه کالیفرنیا: \\
-\lr{https://archive.ics.uci.edu/ml/}
+\item مدیریت مدل:
+\begin{itemize}
+\item ام‌ال‌فلو (>=۲.۷.۰): https://mlflow.org/
+\item جاب‌لیب (>=۱.۳.۰): برای سریال‌سازی مدل
+\end{itemize}
 
-\item پایگاه داده هزینه‌های بهداشتی جهانی سازمان بهداشت جهانی: \\
-\lr{https://apps.who.int/nha/database}
+\item مجموعه‌داده‌های بهداشتی:
+\begin{itemize}
+\item مخزن یادگیری ماشین دانشگاه کالیفرنیا: مجموعه‌داده‌های سرطان پستان و شراب
+\item مجموعه‌داده‌های ساینت‌کیت لرن: دیابت، مسکن کالیفرنیا
+\item پایگاه داده هزینه‌های بهداشتی جهانی سازمان بهداشت جهانی: آمار هزینه‌های بهداشتی
+\end{itemize}
+
+\item کدهای منبع پروژه:
+\begin{itemize}
+\item ساختار مخزن: healthcare\_dss/ شامل core/، analytics/، ui/، utils/، config/
+\item اپلیکیشن اصلی: main.py - کلاس سیستم پشتیبانی تصمیم‌گیری بهداشتی (۱,۹۹۵ خط کد)
+\item فایل‌های پیکربندی: smart\_dataset\_config.json، dataset\_target\_analysis.json، requirements.txt
+\item نتایج آزمایش‌ها: realistic\_model\_performance\_results\_*.json، test\_results\_*.json
+\item مجموعه‌داده‌ها: datasets/ - ۱۲ فایل با بیش از ۲۴,۰۰۰ رکورد
+\item تصاویر داشبورد: ۵ فایل نمایش داشبوردهای مختلف
+\end{itemize}
 \end{enumerate}
 
 \end{document}
