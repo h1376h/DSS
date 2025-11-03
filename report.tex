@@ -11,17 +11,70 @@
 \newfontfamily\iranfont{IRANSansXFaNum}
 
 % Page setup and packages
-\usepackage[margin=2.5cm]{geometry}
+\usepackage[margin=2.5cm,top=3cm,bottom=3cm]{geometry}
 \usepackage{graphicx}
 \usepackage{float}
 \usepackage{amsmath}
 \usepackage{booktabs}
 \usepackage{longtable}
 \usepackage{array}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{enumitem}
+
+% Hyperref setup for clickable TOC
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    pdftitle={سیستم پشتیبانی تصمیم‌گیری برای مراقبت‌های بهداشتی},
+    pdfauthor={حامد حیدریان},
+    pdfsubject={سیستم‌های تصمیم‌یار},
+    pdfkeywords={سیستم پشتیبانی تصمیم‌گیری، مراقبت‌های بهداشتی، یادگیری ماشین}
+}
 
 % Line spacing
 \usepackage{setspace}
 \onehalfspacing
+
+% Header and footer setup
+\setlength{\headheight}{14pt}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[R]{\small سیستم پشتیبانی تصمیم‌گیری برای مراقبت‌های بهداشتی}
+\fancyhead[L]{\small دانشگاه علامه طباطبائی}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+% Title page style
+\fancypagestyle{titlepage}{
+    \fancyhf{}
+    \renewcommand{\headrulewidth}{0pt}
+    \renewcommand{\footrulewidth}{0pt}
+}
+
+% Section title formatting
+\titleformat{\section}
+{\Large\bfseries\yekanfont}
+{\thesection}{1em}{}
+[\titlerule]
+
+\titleformat{\subsection}
+{\large\bfseries\iranfont}
+{\thesubsection}{1em}{}
+
+\titleformat{\subsubsection}
+{\normalsize\bfseries\iranfont}
+{\thesubsubsection}{1em}{}
+
+% Spacing after sections
+\titlespacing*{\section}{0pt}{20pt}{15pt}
+\titlespacing*{\subsection}{0pt}{15pt}{10pt}
+\titlespacing*{\subsubsection}{0pt}{10pt}{8pt}
 
 % Footnote formatting
 \renewcommand{\thefootnote}{\arabic{footnote}}
@@ -35,100 +88,155 @@
 \renewcommand{\thesubsection}{\lr{\arabic{section}.\arabic{subsection}}}
 \renewcommand{\thesubsubsection}{\lr{\arabic{section}.\arabic{subsection}.\arabic{subsubsection}}}
 
-% Fix table of contents numbering
+% Fix table of contents numbering and formatting
 \usepackage{tocloft}
 \renewcommand{\cftsecpresnum}{\lr{}}
 \renewcommand{\cftsubsecpresnum}{\lr{}}
 \renewcommand{\cftsubsubsecpresnum}{\lr{}}
 
-% Title page setup
-\title{
+% TOC formatting
+\renewcommand{\cftsecfont}{\bfseries}
+\renewcommand{\cftsecpagefont}{\bfseries}
+\setlength{\cftsecnumwidth}{2em}
+\setlength{\cftsubsecnumwidth}{2.5em}
+\setlength{\cftsubsubsecnumwidth}{3em}
+
+% List formatting
+\setlist[itemize]{rightmargin=2em, itemsep=0.5em}
+\setlist[enumerate]{rightmargin=2em, itemsep=0.5em}
+
+% Title page setup - Custom title page
+\newcommand{\maketitlepage}{
+\thispagestyle{titlepage}
 \begin{center}
-\includegraphics[height=3cm]{500px-ATU.png}\\[0.5cm]
-{\large دانشگاه علامه طباطبائی}\\
-{\small \lr{Allameh Tabataba'i University (ATU)}}\\[0.3cm]
-{\normalsize دانشکده‌ی آمار، ریاضی و رایانه}\\
-{\small \lr{Faculty of Statistics, Mathematics, and Computer}}\\[1cm]
-{\yekanfont \huge گزارش پروژه}\\[0.5cm]
-{\Large پیاده‌سازی سیستم پشتیبانی تصمیم‌گیری برای مراقبت‌های بهداشتی}
-\end{center}
-}
+\vspace*{1cm}
 
-\author{{\iranfont \large حامد حیدریان}\\
-{\normalsize شماره دانشجویی: ۴۰۳۱۳۱۴۱۰۲۱}\\[0.3cm]
-{\normalsize سایر اعضای پروژه:}\\
+% University logo and name
+\includegraphics[height=4cm]{500px-ATU.png}\\[1cm]
+
+{\LARGE\bfseries دانشگاه علامه طباطبائی}\\[0.3cm]
+{\large \lr{Allameh Tabataba'i University (ATU)}}\\[0.5cm]
+{\Large دانشکده‌ی آمار، ریاضی و رایانه}\\[0.3cm]
+{\normalsize \lr{Faculty of Statistics, Mathematics, and Computer}}\\[2cm]
+
+% Project title
+{\yekanfont \Huge \textbf{گزارش پروژه}}\\[1cm]
+{\LARGE\bfseries پیاده‌سازی سیستم پشتیبانی تصمیم‌گیری}\\[0.5cm]
+{\LARGE\bfseries برای مراقبت‌های بهداشتی}\\[2cm]
+
+% Author information
+\begin{minipage}{0.8\textwidth}
+\centering
+{\iranfont \Large \textbf{حامد حیدریان}}\\[0.5cm]
+{\normalsize شماره دانشجویی: ۴۰۳۱۳۱۴۱۰۲۱}\\[1cm]
+
+{\normalsize \textbf{سایر اعضای پروژه:}}\\[0.3cm]
 {\normalsize ایمان منتظمی}\\
-{\normalsize محمدمهدی عباسی}\\[0.5cm]
-{\normalsize درس: سیستم‌های تصمیم‌یار}\\
-{\normalsize استاد: دکتر رشیدی}\\
-{\normalsize نسخه سیستم: \lr{1.0.0}}\\
-{\normalsize تاریخ تکمیل: شهریور ۱۴۰۴}}
+{\normalsize محمدمهدی عباسی}\\[1.5cm]
 
-\date{}
+{\normalsize \textbf{درس:} سیستم‌های تصمیم‌یار}\\[0.3cm]
+{\normalsize \textbf{استاد:} دکتر رشیدی}\\[0.3cm]
+{\normalsize \textbf{نسخه سیستم:} \lr{1.0.0}}\\[0.3cm]
+{\normalsize \textbf{تاریخ تکمیل:} شهریور ۱۴۰۴}
+\end{minipage}
+
+\vfill
+\end{center}
+\newpage
+}
 
 \begin{document}
 
-% Title page
-\maketitle
-\thispagestyle{empty}
+% Custom title page
+\maketitlepage
 
 % Abstract page
-\newpage
 \thispagestyle{empty}
+\vspace*{2cm}
 \begin{center}
-{\Large \textbf{چکیده}}
+{\LARGE\bfseries\yekanfont چکیده}
 \end{center}
 
-\vspace{1cm}
+\vspace{1.5cm}
 
+\begin{spacing}{1.3}
 این پروژه به پیاده‌سازی یک سیستم پشتیبانی تصمیم‌گیری جامع برای مراقبت‌های بهداشتی می‌پردازد که بر اساس چارچوب نظری توربان-شاردا-دلن و مدل چهار مرحله‌ای هربرت سایمون طراحی شده است. سیستم از \lr{12} مجموعه‌داده مختلف بهداشتی (\lr{6} واقعی و \lr{6} مصنوعی) با بیش از \lr{24,000} رکورد استفاده می‌کند و \lr{8} الگوریتم یادگیری ماشین مختلف را پیاده‌سازی کرده است.
 
 نتایج نشان می‌دهد که سیستم در تشخیص سرطان پستان به دقت \lr{98.2\%} و در طبقه‌بندی شراب به دقت \lr{100\%} دست یافته است. سیستم شامل ۵ داشبورد تخصصی برای نقش‌های مختلف (کادر بالینی، مدیریت اجرایی، رهبری بحرانی، مدیر بخش و مدیر مالی) است و در \lr{159} تست جامع، نرخ موفقیت \lr{89.94\%} کسب کرده است.
+\end{spacing}
 
-\textbf{کلمات کلیدی:} سیستم پشتیبانی تصمیم‌گیری، مراقبت‌های بهداشتی، یادگیری ماشین، داشبورد تخصصی، چارچوب توربان-شاردا-دلن
+\vspace{1cm}
+
+\noindent\textbf{کلمات کلیدی:} سیستم پشتیبانی تصمیم‌گیری، مراقبت‌های بهداشتی، یادگیری ماشین، داشبورد تخصصی، چارچوب توربان-شاردا-دلن
 
 % Table of contents
 \newpage
-\tableofcontents
 \thispagestyle{empty}
+\vspace*{1cm}
+\begin{center}
+{\LARGE\bfseries\yekanfont فهرست مطالب}
+\end{center}
+\vspace{1cm}
+\tableofcontents
 
 % List of figures
 \newpage
-\listoffigures
 \thispagestyle{empty}
+\vspace*{1cm}
+\begin{center}
+{\LARGE\bfseries\yekanfont فهرست تصاویر}
+\end{center}
+\vspace{1cm}
+\listoffigures
 
 % List of tables
 \newpage
-\listoftables
 \thispagestyle{empty}
+\vspace*{1cm}
+\begin{center}
+{\LARGE\bfseries\yekanfont فهرست جداول}
+\end{center}
+\vspace{1cm}
+\listoftables
 
 % Start main content
 \newpage
 \setcounter{page}{1}
+\pagestyle{fancy}
 
-\section{مقدمه}
+\section{مقدمه}\label{sec:introduction}
 
-\subsection{تعریف مسئله تحقیق}
+\subsection{تعریف مسئله تحقیق}\label{subsec:problem_definition}
+
+\vspace{0.5cm}
 
 {\yekanfont \textbf{مسئله اصلی}}: سیستم‌های بهداشتی امروز با چالش یکپارچه‌سازی\footnote{Data Integration} داده‌های متنوع و ارائه پشتیبانی تصمیم‌گیری مناسب برای نقش‌های مختلف مواجه هستند. سیستم‌های پشتیبانی تصمیم‌گیری\footnote{Decision Support System (DSS)} موجود اغلب:
 
-\begin{itemize}
+\begin{itemize}[topsep=0.5em]
 \item قادر به پردازش همزمان\footnote{Concurrent Processing} انواع مختلف داده‌های بهداشتی نیستند
 \item رابط کاربری\footnote{User Interface} یکسان برای نقش‌های مختلف ارائه می‌دهند
 \item از الگوریتم‌های یادگیری ماشین\footnote{Machine Learning Algorithms} مدرن استفاده نمی‌کنند
 \end{itemize}
 
+\vspace{0.5cm}
+
 {\iranfont \textbf{سؤال تحقیق}}: آیا می‌توان با ترکیب چارچوب نظری\footnote{Theoretical Framework} سیستم‌های پشتیبانی تصمیم‌گیری، الگوریتم‌های یادگیری ماشین مدرن، و طراحی مبتنی بر نقش\footnote{Role-based Design}، سیستمی طراحی کرد که بتواند مسائل مختلف بهداشتی را به‌طور مؤثر حل کند؟
 
+\vspace{0.5cm}
+
 \textbf{فرضیه تحقیق}: پیاده‌سازی سیستم پشتیبانی تصمیم‌گیری مبتنی بر چارچوب توربان-شاردا-دلن\footnote{Turban-Sharda-Delen Framework} با استفاده از الگوریتم‌های یادگیری ماشین و طراحی مبتنی بر نقش، می‌تواند عملکرد تصمیم‌گیری در حوزه‌های مختلف بهداشتی را بهبود دهد.
+
+\vspace{0.5cm}
 
 کتاب «تحلیل‌ها، علم داده و هوش مصنوعی: سیستم‌های پشتیبانی تصمیم‌گیری»\footnote{Analytics, Data Science, \& Artificial Intelligence: Systems for Decision Support (11th Edition)} نوشته توربان، شاردا و دلن چارچوب جامعی برای طراحی و پیاده‌سازی سیستم‌های پشتیبانی تصمیم‌گیری ارائه می‌دهد. 
 
 این چارچوب بر اساس مدل چهار مرحله‌ای هربرت سایمون\footnote{Herbert Simon's Four-Phase Decision Model} شامل مراحل هوشمندی\footnote{Intelligence Phase}، طراحی\footnote{Design Phase}، انتخاب\footnote{Choice Phase} و پیاده‌سازی\footnote{Implementation Phase} است.
 
-در این پروژه، یک سیستم پشتیبانی تصمیم‌گیری جامع برای مراقبت‌های بهداشتی\footnote{Healthcare} پیاده‌سازی شده است که از چهار زیرسیستم اصلی تشکیل شده: مدیریت داده‌ها\footnote{Data Management Subsystem}، مدیریت مدل‌ها\footnote{Model Management Subsystem}، مدیریت دانش\footnote{Knowledge Management Subsystem} و رابط کاربری. سیستم با استفاده از الگوریتم‌های یادگیری ماشین مختلف شامل جنگل تصادفی\footnote{Random Forest}، تقویت گرادیان شدید\footnote{XGBoost (Extreme Gradient Boosting)}، تقویت گرادیان سبک\footnote{LightGBM (Light Gradient Boosting Machine)} و ماشین بردار پشتیبان\footnote{Support Vector Machine (SVM)}، قابلیت تحلیل و پیش‌بینی در حوزه‌های مختلف بهداشتی را فراهم می‌آورد.
+در این پروژه، یک سیستم پشتیبانی تصمیم‌گیری جامع برای مراقبت‌های بهداشتی\footnote{Healthcare} پیاده‌سازی شده است که از چهار زیرسیستم اصلی تشکیل شده: مدیریت داده‌ها\footnote{Data Management Subsystem}، مدیریت مدل‌ها\footnote{Model Management Subsystem}، مدیریت دانش\footnote{Knowledge Management Subsystem} و رابط کاربری. 
 
-\subsection{مسائل حل شده توسط سیستم}
+سیستم با استفاده از الگوریتم‌های یادگیری ماشین مختلف شامل جنگل تصادفی\footnote{Random Forest}، تقویت گرادیان شدید\footnote{XGBoost (Extreme Gradient Boosting)}، تقویت گرادیان سبک\footnote{LightGBM (Light Gradient Boosting Machine)} و ماشین بردار پشتیبان\footnote{Support Vector Machine (SVM)}، قابلیت تحلیل و پیش‌بینی در حوزه‌های مختلف بهداشتی را فراهم می‌آورد.
+
+\subsection{مسائل حل شده توسط سیستم}\label{subsec:solved_problems}
 
 سیستم طراحی شده برای حل چهار دسته مسئله اصلی در مراقبت‌های بهداشتی طراحی شده است:
 
@@ -140,11 +248,12 @@
 
 \textbf{۴. مسائل مالی و استراتژیک}: شامل تحلیل هزینه‌های بهداشتی\footnote{Healthcare Cost Analysis}، پیش‌بینی درآمد\footnote{Revenue Prediction}، و بهینه‌سازی بودجه\footnote{Budget Optimization} که از طریق داشبورد مدیر مالی\footnote{Financial Manager Dashboard} و رهبری بحرانی\footnote{Critical Leadership Dashboard} پشتیبانی می‌شود.
 
-\section{روش کار}
+\newpage
+\section{روش کار}\label{sec:methodology}
 
 این پروژه با هدف حل مسائل عملی در سیستم‌های بهداشتی، از روش‌شناسی ترکیبی استفاده کرده که شامل سه رویکرد اصلی است:
 
-\subsection{روش‌شناسی کلی پروژه}
+\subsection{روش‌شناسی کلی پروژه}\label{subsec:general_methodology}
 
 {\yekanfont \textbf{رویکرد اول - چارچوب نظری}}: پیاده‌سازی بر اساس چارچوب نظری کتاب توربان، شاردا و دلن و مدل چهار مرحله‌ای هربرت سایمون برای تصمیم‌گیری انجام شده است.
 
@@ -158,9 +267,9 @@
 \item تحلیل آماری نتایج برای تعیین بهترین الگوریتم برای هر نوع مسئله
 \end{itemize}
 
-\subsection{داده‌ها و آماده‌سازی}
+\subsection{داده‌ها و آماده‌سازی}\label{subsec:data_preparation}
 
-\subsubsection{مجموعه‌داده‌های مورد استفاده}
+\subsubsection{مجموعه‌داده‌های مورد استفاده}\label{subsubsec:datasets}
 
 سیستم از ۱۲ مجموعه‌داده مختلف استفاده می‌کند که شامل داده‌های واقعی\footnote{Real-world Data} و مصنوعی\footnote{Synthetic Data} است:
 
@@ -218,7 +327,7 @@
   - شامل ۱۳ جزء و نوع دارو\footnote{Drug Components and Type}
 \end{itemize}
 
-\subsection{پیش‌پردازش داده‌ها}
+\subsection{پیش‌پردازش داده‌ها}\label{subsec:preprocessing}
 
 سیستم از کلاس موتور پیش‌پردازش\footnote{Preprocessing Engine} برای پیش‌پردازش هوشمند داده‌ها استفاده می‌کند که شامل:
 
@@ -231,48 +340,60 @@
 \item انتخاب ویژگی با روش اطلاعات متقابل\footnote{Mutual Information Feature Selection}
 \end{enumerate}
 
-\subsection{طراحی رابط کاربری مبتنی بر نقش}
+\subsection{طراحی رابط کاربری مبتنی بر نقش}\label{subsec:ui_design}
 
 برای حل مسائل مختلف سیستم‌های بهداشتی، از روش طراحی مبتنی بر نقش\footnote{Role-based Design Approach} استفاده شده است. پنج داشبورد تخصصی طراحی و پیاده‌سازی شده است:
 
+\vspace{1cm}
+
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.8\textwidth]{image_Clinical_Staff.png}
+\includegraphics[width=0.85\textwidth]{image_Clinical_Staff.png}
 \caption{داشبورد کادر بالینی - پیاده‌سازی مدل‌های تشخیص بالینی}
 \label{fig:clinical_dashboard}
 \end{figure}
 
+\vspace{0.5cm}
+
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.8\textwidth]{image_Administrative_Executive.png}
+\includegraphics[width=0.85\textwidth]{image_Administrative_Executive.png}
 \caption{داشبورد مدیریت اجرایی - سیستم نظارت بر عملکرد و منابع}
 \label{fig:admin_dashboard}
 \end{figure}
 
+\vspace{0.5cm}
+
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.8\textwidth]{image_Critical_Leadership.png}
+\includegraphics[width=0.85\textwidth]{image_Critical_Leadership.png}
 \caption{داشبورد رهبری بحرانی - تحلیل استراتژیک و پیش‌بینی روندها}
 \label{fig:leadership_dashboard}
 \end{figure}
 
+\vspace{0.5cm}
+
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.8\textwidth]{image_Department_Manager.png}
+\includegraphics[width=0.85\textwidth]{image_Department_Manager.png}
 \caption{داشبورد مدیر بخش - سیستم مدیریت کیفیت و عملکرد بخش}
 \label{fig:department_dashboard}
 \end{figure}
 
+\vspace{0.5cm}
+
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.8\textwidth]{image_Financial_Manager.png}
+\includegraphics[width=0.85\textwidth]{image_Financial_Manager.png}
 \caption{داشبورد مدیر مالی - سیستم تحلیل مالی و کنترل بودجه}
 \label{fig:financial_dashboard}
 \end{figure}
 
-\subsection{پیاده‌سازی مدل}
+\vspace{1cm}
 
-\subsubsection{نوع مدل و ساختار شبکه}
+\subsection{پیاده‌سازی مدل}\label{subsec:model_implementation}
+
+\subsubsection{نوع مدل و ساختار شبکه}\label{subsubsec:model_architecture}
 
 سیستم از معماری مدولار\footnote{Modular Architecture} استفاده می‌کند که شامل چهار زیرسیستم اصلی است:
 
@@ -293,9 +414,10 @@
 \item رگرسیون بردار پشتیبان\footnote{Support Vector Regression}: برای رگرسیون با ماشین بردار پشتیبان\footnote{SVM-based Regression}
 \end{itemize}
 
-\section{ارزیابی و نتایج}
+\newpage
+\section{ارزیابی و نتایج}\label{sec:evaluation}
 
-\subsection{روش و معیار ارزیابی}
+\subsection{روش و معیار ارزیابی}\label{subsec:evaluation_methods}
 
 ارزیابی سیستم در دو بعد اصلی انجام شده است:
 
@@ -314,9 +436,9 @@
 \item تست عملکرد: سنجش سرعت و کارایی سیستم
 \end{itemize}
 
-\subsection{آزمایش‌ها و نتایج}
+\subsection{آزمایش‌ها و نتایج}\label{subsec:experiments}
 
-\subsubsection{نتایج مدل‌های یادگیری ماشین}
+\subsubsection{نتایج مدل‌های یادگیری ماشین}\label{subsubsec:ml_results}
 
 بر اساس آزمایش‌های انجام شده، نتایج دقیق به شرح زیر است:
 
@@ -358,7 +480,7 @@
 \item تعداد کل مدل‌های آموزش‌دیده: ۲۴ مدل\footnote{Total Trained Models Count}
 \end{itemize}
 
-\subsubsection{نتایج تست‌های سیستم}
+\subsubsection{نتایج تست‌های سیستم}\label{subsubsec:system_tests}
 
 \textbf{عملکرد کلی سیستم}:
 \begin{itemize}
@@ -371,27 +493,33 @@
 \item تعداد تست‌های رد شده: ۷ تست
 \end{itemize}
 
+\vspace{1cm}
+
 \begin{table}[H]
 \centering
 \caption{تفکیک عملکرد ماژول‌ها}
 \label{tab:module_performance}
+\vspace{0.5cm}
 \begin{tabular}{>{\centering\arraybackslash}p{3cm}>{\centering\arraybackslash}p{3.5cm}>{\centering\arraybackslash}p{2cm}>{\centering\arraybackslash}p{2.5cm}>{\centering\arraybackslash}p{2.5cm}}
 \toprule
 \textbf{مجموعه تست} & \textbf{ماژول} & \textbf{تعداد تست} & \textbf{نرخ موفقیت} & \textbf{زمان اجرا} \\
 \midrule
-\lr{TestSuite\_1} & مدیریت مدل‌ها & \lr{25} & \lr{60.0\%} & \lr{1.03} ثانیه \\
-\lr{TestSuite\_2} & مدیریت داده‌ها & \lr{29} & \lr{100\%} & \lr{0.70} ثانیه \\
-\lr{TestSuite\_3} & ماژول‌های رابط کاربری & \lr{28} & \lr{78.57\%} & \lr{1.75} ثانیه \\
-\lr{TestSuite\_4} & تحلیل‌ها & \lr{31} & \lr{100\%} & \lr{1.11} ثانیه \\
-\lr{TestSuite\_5} & مدیریت دانش & \lr{11} & \lr{100\%} & \lr{2.31} ثانیه \\
+\lr{TestSuite\_1} & مدیریت مدل‌ها & \lr{25} & \lr{60.0\%} & \lr{1.03} ثانیه \\[0.3em]
+\lr{TestSuite\_2} & مدیریت داده‌ها & \lr{29} & \lr{100\%} & \lr{0.70} ثانیه \\[0.3em]
+\lr{TestSuite\_3} & ماژول‌های رابط کاربری & \lr{28} & \lr{78.57\%} & \lr{1.75} ثانیه \\[0.3em]
+\lr{TestSuite\_4} & تحلیل‌ها & \lr{31} & \lr{100\%} & \lr{1.11} ثانیه \\[0.3em]
+\lr{TestSuite\_5} & مدیریت دانش & \lr{11} & \lr{100\%} & \lr{2.31} ثانیه \\[0.3em]
 \lr{TestSuite\_6} & اجزای رابط کاربری & \lr{35} & \lr{100\%} & \lr{3.31} ثانیه \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-\section{جمع‌بندی و پیشنهادها}
+\vspace{1cm}
 
-\subsection{جمع‌بندی کلی از نتایج}
+\newpage
+\section{جمع‌بندی و پیشنهادها}\label{sec:conclusion}
+
+\subsection{جمع‌بندی کلی از نتایج}\label{subsec:summary}
 
 پروژه سیستم پشتیبانی تصمیم‌گیری مراقبت‌های بهداشتی با موفقیت قابل‌توجه پیاده‌سازی شده و نتایج ملموسی حاصل کرده است. سیستم با ترکیب چهار زیرسیستم اصلی، پلتفرمی جامع و کاربردی برای پشتیبانی تصمیمات بهداشتی ارائه داده است.
 
@@ -421,7 +549,7 @@
 \item مستندات جامع و کامل
 \end{itemize}
 
-\subsection{چالش‌های موجود در روند کار}
+\subsection{چالش‌های موجود در روند کار}\label{subsec:challenges}
 
 بر اساس نتایج تست‌ها، چالش‌های زیر شناسایی شده است:
 
@@ -461,7 +589,7 @@
 \item پیچیدگی سیستم: مدیریت ۲۳ وابستگی خارجی، نیاز به تنظیمات پیچیده برای محیط‌های مختلف
 \end{itemize}
 
-\subsection{پیشنهادها برای بهبود پروژه و مسیرهای آتی}
+\subsection{پیشنهادها برای بهبود پروژه و مسیرهای آتی}\label{subsec:recommendations}
 
 \textbf{رفع مسائل فنی شناسایی شده}:
 \begin{itemize}
@@ -512,65 +640,67 @@
 \item مقایسه با سیستم‌های مشابه بین‌المللی\footnote{Comparison with Similar International Systems}
 \end{itemize}
 
-\section{منابع و مراجع}
+\newpage
+\section{منابع و مراجع}\label{sec:references}
 
-\begin{enumerate}
+\vspace{0.5cm}
+
+\subsection{منابع اصلی}\label{subsec:primary_sources}
+
+\begin{enumerate}[topsep=0.5em, itemsep=0.8em]
 \item توربان، ای.، شاردا، آر.، و دلن، د. (۲۰۲۰). \textit{تحلیل‌ها، علم داده و هوش مصنوعی: سیستم‌های پشتیبانی تصمیم‌گیری} (ویرایش یازدهم). پیرسون.
 
 \item سایمون، هربرت ای. (۱۹۶۰). \textit{علم جدید تصمیم‌گیری مدیریت}. هارپر و رو.
 
 \item فرایند استاندارد صنعتی برای داده‌کاوی (کریسپ-دی‌ام) (۲۰۰۰).
+\end{enumerate}
 
-\item استانداردهای داده‌های بهداشتی:
-\begin{itemize}
+\subsection{استانداردهای فنی}\label{subsec:technical_standards}
+
+\begin{enumerate}[topsep=0.5em, itemsep=0.8em]
 \item مشخصات اچ‌ال‌هفت فایر (۲۰۲۳). منابع قابلیت تعامل سریع مراقبت‌های بهداشتی
 \item استاندارد دایکام برای تصویربرداری پزشکی
 \item اسنومد سی‌تی برای اصطلاح‌شناسی بالینی
-\end{itemize}
+\end{enumerate}
 
-\item کتابخانه‌های یادگیری ماشین:
-\begin{itemize}
-\item ساینت‌کیت لرن (>=۱.۳.۰): https://scikit-learn.org/
-\item ایکس‌جی‌بوست (>=۱.۷.۰): https://xgboost.readthedocs.io/
-\item لایت‌جی‌بی‌ام (>=۴.۰.۰): https://lightgbm.readthedocs.io/
-\item اپتونا (>=۳.۳.۰): https://optuna.org/
-\end{itemize}
+\subsection{کتابخانه‌های نرم‌افزاری}\label{subsec:software_libraries}
 
-\item هوش مصنوعی قابل تفسیر:
-\begin{itemize}
-\item شپ (>=۰.۴۲.۰): https://shap.readthedocs.io/
-\item لایم (>=۰.۲.۰): https://lime-ml.readthedocs.io/
-\end{itemize}
+\begin{enumerate}[topsep=0.5em, itemsep=0.8em]
+\item ساینت‌کیت لرن (>=۱.۳.۰): \url{https://scikit-learn.org/}
+\item ایکس‌جی‌بوست (>=۱.۷.۰): \url{https://xgboost.readthedocs.io/}
+\item لایت‌جی‌بی‌ام (>=۴.۰.۰): \url{https://lightgbm.readthedocs.io/}
+\item اپتونا (>=۳.۳.۰): \url{https://optuna.org/}
+\end{enumerate}
 
-\item داشبورد و تجسم داده‌ها:
-\begin{itemize}
-\item استریم‌لیت (>=۱.۲۸.۰): https://streamlit.io/
-\item پلاتلی (>=۵.۱۵.۰): https://plotly.com/
-\item دش (>=۲.۱۴.۰): https://dash.plotly.com/
-\end{itemize}
+\subsection{ابزارهای تجسم و تحلیل}\label{subsec:visualization_tools}
 
-\item مدیریت مدل:
-\begin{itemize}
-\item ام‌ال‌فلو (>=۲.۷.۰): https://mlflow.org/
+\begin{enumerate}[topsep=0.5em, itemsep=0.8em]
+\item شپ (>=۰.۴۲.۰): \url{https://shap.readthedocs.io/} - هوش مصنوعی قابل تفسیر
+\item لایم (>=۰.۲.۰): \url{https://lime-ml.readthedocs.io/} - تفسیر مدل‌های یادگیری ماشین
+\item استریم‌لیت (>=۱.۲۸.۰): \url{https://streamlit.io/} - ساخت داشبورد
+\item پلاتلی (>=۵.۱۵.۰): \url{https://plotly.com/} - تجسم تعاملی داده‌ها
+\item دش (>=۲.۱۴.۰): \url{https://dash.plotly.com/} - اپلیکیشن‌های وب تحلیلی
+\item ام‌ال‌فلو (>=۲.۷.۰): \url{https://mlflow.org/} - مدیریت چرخه حیات مدل
 \item جاب‌لیب (>=۱.۳.۰): برای سریال‌سازی مدل
-\end{itemize}
+\end{enumerate}
 
-\item مجموعه‌داده‌های بهداشتی:
-\begin{itemize}
+\subsection{منابع داده}\label{subsec:data_sources}
+
+\begin{enumerate}[topsep=0.5em, itemsep=0.8em]
 \item مخزن یادگیری ماشین دانشگاه کالیفرنیا: مجموعه‌داده‌های سرطان پستان و شراب
 \item مجموعه‌داده‌های ساینت‌کیت لرن: دیابت، مسکن کالیفرنیا
 \item پایگاه داده هزینه‌های بهداشتی جهانی سازمان بهداشت جهانی: آمار هزینه‌های بهداشتی
-\end{itemize}
+\end{enumerate}
 
-\item کدهای منبع پروژه:
-\begin{itemize}
-\item ساختار مخزن: healthcare\_dss/ شامل core/، analytics/، ui/، utils/، config/
-\item اپلیکیشن اصلی: main.py - کلاس سیستم پشتیبانی تصمیم‌گیری بهداشتی (۱,۹۹۵ خط کد)
-\item فایل‌های پیکربندی: smart\_dataset\_config.json، dataset\_target\_analysis.json، requirements.txt
-\item نتایج آزمایش‌ها: realistic\_model\_performance\_results\_*.json، test\_results\_*.json
-\item مجموعه‌داده‌ها: datasets/ - ۱۲ فایل با بیش از ۲۴,۰۰۰ رکورد
-\item تصاویر داشبورد: ۵ فایل نمایش داشبوردهای مختلف
-\end{itemize}
+\subsection{مستندات پروژه}\label{subsec:project_documentation}
+
+\begin{enumerate}[topsep=0.5em, itemsep=0.8em]
+\item ساختار مخزن: \texttt{healthcare\_dss/} شامل \texttt{core/}، \texttt{analytics/}، \texttt{ui/}، \texttt{utils/}، \texttt{config/}
+\item اپلیکیشن اصلی: \texttt{main.py} - کلاس سیستم پشتیبانی تصمیم‌گیری بهداشتی (۱,۹۹۵ خط کد)
+\item فایل‌های پیکربندی: \texttt{smart\_dataset\_config.json}، \texttt{dataset\_target\_analysis.json}، \texttt{requirements.txt}
+\item نتایج آزمایش‌ها: \texttt{realistic\_model\_performance\_results\_*.json}، \texttt{test\_results\_*.json}
+\item مجموعه‌داده‌ها: \texttt{datasets/} - ۱۲ فایل با بیش از ۲۴,۰۰۰ رکورد
+\item تصاویر داشبورد: ۵ فایل نمایش داشبوردهای مختلف (شکل‌های \ref{fig:clinical_dashboard} تا \ref{fig:financial_dashboard})
 \end{enumerate}
 
 \end{document}

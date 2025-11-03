@@ -1,21 +1,27 @@
-\contentsline {section}{\numberline {\lr {1}}مقدمه}{1}{}%
-\contentsline {subsection}{\numberline {\lr {1.1}}تعریف مسئله تحقیق}{1}{}%
-\contentsline {subsection}{\numberline {\lr {1.2}}مسائل حل شده توسط سیستم}{2}{}%
-\contentsline {section}{\numberline {\lr {2}}روش کار}{2}{}%
-\contentsline {subsection}{\numberline {\lr {2.1}}روش‌شناسی کلی پروژه}{3}{}%
-\contentsline {subsection}{\numberline {\lr {2.2}}داده‌ها و آماده‌سازی}{3}{}%
-\contentsline {subsubsection}{\numberline {\lr {2.2.1}}مجموعه‌داده‌های مورد استفاده}{3}{}%
-\contentsline {subsection}{\numberline {\lr {2.3}}پیش‌پردازش داده‌ها}{5}{}%
-\contentsline {subsection}{\numberline {\lr {2.4}}طراحی رابط کاربری مبتنی بر نقش}{6}{}%
-\contentsline {subsection}{\numberline {\lr {2.5}}پیاده‌سازی مدل}{8}{}%
-\contentsline {subsubsection}{\numberline {\lr {2.5.1}}نوع مدل و ساختار شبکه}{8}{}%
-\contentsline {section}{\numberline {\lr {3}}ارزیابی و نتایج}{9}{}%
-\contentsline {subsection}{\numberline {\lr {3.1}}روش و معیار ارزیابی}{9}{}%
-\contentsline {subsection}{\numberline {\lr {3.2}}آزمایش‌ها و نتایج}{10}{}%
-\contentsline {subsubsection}{\numberline {\lr {3.2.1}}نتایج مدل‌های یادگیری ماشین}{10}{}%
-\contentsline {subsubsection}{\numberline {\lr {3.2.2}}نتایج تست‌های سیستم}{11}{}%
-\contentsline {section}{\numberline {\lr {4}}جمع‌بندی و پیشنهادها}{11}{}%
-\contentsline {subsection}{\numberline {\lr {4.1}}جمع‌بندی کلی از نتایج}{11}{}%
-\contentsline {subsection}{\numberline {\lr {4.2}}چالش‌های موجود در روند کار}{12}{}%
-\contentsline {subsection}{\numberline {\lr {4.3}}پیشنهادها برای بهبود پروژه و مسیرهای آتی}{13}{}%
-\contentsline {section}{\numberline {\lr {5}}منابع و مراجع}{15}{}%
+\contentsline {section}{\numberline {\lr {1}}مقدمه}{1}{section.1}%
+\contentsline {subsection}{\numberline {\lr {1.1}}تعریف مسئله تحقیق}{1}{subsection.1.1}%
+\contentsline {subsection}{\numberline {\lr {1.2}}مسائل حل شده توسط سیستم}{2}{subsection.1.2}%
+\contentsline {section}{\numberline {\lr {2}}روش کار}{3}{section.2}%
+\contentsline {subsection}{\numberline {\lr {2.1}}روش‌شناسی کلی پروژه}{3}{subsection.2.1}%
+\contentsline {subsection}{\numberline {\lr {2.2}}داده‌ها و آماده‌سازی}{3}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {\lr {2.2.1}}مجموعه‌داده‌های مورد استفاده}{3}{subsubsection.2.2.1}%
+\contentsline {subsection}{\numberline {\lr {2.3}}پیش‌پردازش داده‌ها}{6}{subsection.2.3}%
+\contentsline {subsection}{\numberline {\lr {2.4}}طراحی رابط کاربری مبتنی بر نقش}{6}{subsection.2.4}%
+\contentsline {subsection}{\numberline {\lr {2.5}}پیاده‌سازی مدل}{9}{subsection.2.5}%
+\contentsline {subsubsection}{\numberline {\lr {2.5.1}}نوع مدل و ساختار شبکه}{9}{subsubsection.2.5.1}%
+\contentsline {section}{\numberline {\lr {3}}ارزیابی و نتایج}{11}{section.3}%
+\contentsline {subsection}{\numberline {\lr {3.1}}روش و معیار ارزیابی}{11}{subsection.3.1}%
+\contentsline {subsection}{\numberline {\lr {3.2}}آزمایش‌ها و نتایج}{11}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {\lr {3.2.1}}نتایج مدل‌های یادگیری ماشین}{11}{subsubsection.3.2.1}%
+\contentsline {subsubsection}{\numberline {\lr {3.2.2}}نتایج تست‌های سیستم}{12}{subsubsection.3.2.2}%
+\contentsline {section}{\numberline {\lr {4}}جمع‌بندی و پیشنهادها}{14}{section.4}%
+\contentsline {subsection}{\numberline {\lr {4.1}}جمع‌بندی کلی از نتایج}{14}{subsection.4.1}%
+\contentsline {subsection}{\numberline {\lr {4.2}}چالش‌های موجود در روند کار}{15}{subsection.4.2}%
+\contentsline {subsection}{\numberline {\lr {4.3}}پیشنهادها برای بهبود پروژه و مسیرهای آتی}{16}{subsection.4.3}%
+\contentsline {section}{\numberline {\lr {5}}منابع و مراجع}{19}{section.5}%
+\contentsline {subsection}{\numberline {\lr {5.1}}منابع اصلی}{19}{subsection.5.1}%
+\contentsline {subsection}{\numberline {\lr {5.2}}استانداردهای فنی}{19}{subsection.5.2}%
+\contentsline {subsection}{\numberline {\lr {5.3}}کتابخانه‌های نرم‌افزاری}{19}{subsection.5.3}%
+\contentsline {subsection}{\numberline {\lr {5.4}}ابزارهای تجسم و تحلیل}{19}{subsection.5.4}%
+\contentsline {subsection}{\numberline {\lr {5.5}}منابع داده}{20}{subsection.5.5}%
+\contentsline {subsection}{\numberline {\lr {5.6}}مستندات پروژه}{20}{subsection.5.6}%
