@@ -19,11 +19,11 @@
 \contentsline {subsection}{\numberline {\lr {4.2}}دستاوردهای فنی و کیفیت سیستم}{15}{subsection.4.2}%
 \contentsline {subsection}{\numberline {\lr {4.3}}چالش‌های موجود در روند کار}{16}{subsection.4.3}%
 \contentsline {subsubsection}{\numberline {\lr {4.3.1}}چالش‌های فنی و معماری}{16}{subsubsection.4.3.1}%
-\contentsline {subsubsection}{\numberline {\lr {4.3.2}}چالش‌های یکپارچگی و سازگاری}{17}{subsubsection.4.3.2}%
+\contentsline {subsubsection}{\numberline {\lr {4.3.2}}چالش‌های یکپارچگی و سازگاری}{16}{subsubsection.4.3.2}%
 \contentsline {subsubsection}{\numberline {\lr {4.3.3}}چالش‌های کاربری و پذیرش}{17}{subsubsection.4.3.3}%
 \contentsline {subsubsection}{\numberline {\lr {4.3.4}}چالش‌های عملیاتی و نگهداری}{18}{subsubsection.4.3.4}%
 \contentsline {subsubsection}{\numberline {\lr {4.3.5}}چالش‌های قانونی و اخلاقی}{19}{subsubsection.4.3.5}%
-\contentsline {subsection}{\numberline {\lr {4.4}}پیشنهادها برای بهبود پروژه و مسیرهای آتی}{20}{subsection.4.4}%
+\contentsline {subsection}{\numberline {\lr {4.4}}پیشنهادها برای بهبود پروژه و مسیرهای آتی}{19}{subsection.4.4}%
 \contentsline {section}{\numberline {\lr {5}}منابع و مراجع}{22}{section.5}%
 \contentsline {subsection}{\numberline {\lr {5.1}}منابع اصلی}{22}{subsection.5.1}%
 \contentsline {subsection}{\numberline {\lr {5.2}}استانداردهای فنی}{22}{subsection.5.2}%
